@@ -1,0 +1,568 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Babo &amp; Keagile | A Cinematic Opening</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#e7d7b6",
+              "background-light": "#f8f6f2",
+              "background-dark": "#111111",
+              "deep-black": "#111111",
+              champagne: "#e8d8b8",
+              taupe: "#81796a",
+            },
+            fontFamily: {
+              display: ["Newsreader", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Newsreader", serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .editorial-letter-spacing {
+        letter-spacing: 0.15em;
+      }
+      .form-container {
+        max-width: 640px;
+      }
+      .ivory-card {
+        background-color: #f8f6f2;
+      }
+      .input-elegant {
+        width: 100%;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid rgb(226 232 240);
+        outline: none;
+        transition: border-color 0.25s ease;
+      }
+      .input-elegant:focus {
+        border-bottom-color: #e7d7b6;
+        box-shadow: none;
+      }
+      .dark .input-elegant {
+        border-bottom-color: rgb(51 65 85);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300"
+  >
+    <!-- Minimalist Navigation Bar -->
+    <header
+      class="relative z-50 w-full px-8 md:px-20 py-8 flex items-center justify-between"
+    >
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-taupe scale-75">flare</span>
+        <h2 class="text-sm font-semibold tracking-[0.3em] uppercase">
+          B&amp;K
+        </h2>
+      </div>
+      <nav
+        class="hidden md:flex items-center gap-12 text-[11px] uppercase tracking-[0.2em] font-medium text-deep-black/70"
+      >
+        <a class="hover:text-deep-black transition-colors" href="home.html"
+          >Our Story</a
+        >
+        <a class="hover:text-deep-black transition-colors" href="rsvp.html"
+          >RSVP</a
+        >
+         <a class="hover:text-deep-black transition-colors" href="venue.html"
+            >Venue & Accom</a
+          >
+        <a class="hover:text-deep-black transition-colors" href="attire.html"
+          >Attire</a
+        >
+       
+      </nav>
+      <div class="md:hidden">
+        <span class="material-symbols-outlined cursor-pointer">menu</span>
+      </div>
+    </header>
+    <main class="pt-20 pb-24">
+      <!-- Hero Section -->
+      <section class="max-w-4xl mx-auto text-center mb-16">
+        <span
+          class="text-champagne text-sm font-bold uppercase tracking-[0.3em] mb-4 block"
+          >Union of Babo &amp; Keagile</span
+        >
+        <h2 class="text-5xl md:text-7xl font-extralight tracking-tight mb-6">
+          RSVP: Your Presence Is Our Joy
+        </h2>
+        <div class="inline-block border-y border-primary/30 py-4 px-8">
+          <p class="text-lg font-medium tracking-wide">
+            Kindly respond by 07 June 2026
+          </p>
+          <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">
+            We look forward to celebrating our union with you.
+          </p>
+        </div>
+      </section>
+      <!-- Main RSVP Form -->
+      <section
+        class="max-w-screen-xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16"
+      >
+        <!-- Form Side -->
+        <div class="lg:col-span-7 flex justify-center lg:justify-end">
+          <div
+            class="ivory-card w-full max-w-4xl dark:bg-slate-900/50 shadow-2xl rounded-xl p-10 lg:p-16 relative overflow-hidden border border-primary/20"
+          >
+            <p
+              class="text-sm text-slate-500 dark:text-slate-400 italic pb-4 mx-auto text-center"
+            >
+              Kindly note that confirmation of your RSVP is based on a
+              predetermined guest list.
+            </p>
+            <form class="space-y-12 max-w-2xl mx-auto">
+              <div class="flex flex-col gap-2">
+                <label
+                  class="text-xs uppercase tracking-widest text-slate-400 font-bold"
+                  for="full-name"
+                  >First and Last Name</label
+                >
+                <input
+                  class="input-elegant py-3 text-xl font-display italic dark:text-white"
+                  id="full-name"
+                  placeholder="John Doe"
+                  type="text"
+                />
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-4">
+                <label class="flex items-center gap-4 cursor-pointer group">
+                  <div class="relative flex items-center justify-center">
+                    <input
+                      class="peer h-6 w-6 border-2 border-primary/30 text-primary focus:ring-primary/20 cursor-pointer rounded-full appearance-none checked:bg-primary checked:border-primary"
+                      name="attendance"
+                      type="radio"
+                    />
+                    <span
+                      class="material-symbols-outlined text-white text-xs absolute opacity-0 peer-checked:opacity-100 transition-opacity"
+                      >check</span
+                    >
+                  </div>
+                  <span
+                    class="text-lg font-display group-hover:text-primary transition-colors italic"
+                    >Delighted to attend</span
+                  >
+                </label>
+                <label class="flex items-center gap-4 cursor-pointer group">
+                  <div class="relative flex items-center justify-center">
+                    <input
+                      class="peer h-6 w-6 border-2 border-primary/30 text-primary focus:ring-primary/20 cursor-pointer rounded-full appearance-none checked:bg-primary checked:border-primary"
+                      name="attendance"
+                      type="radio"
+                    />
+                    <span
+                      class="material-symbols-outlined text-white text-xs absolute opacity-0 peer-checked:opacity-100 transition-opacity"
+                      >close</span
+                    >
+                  </div>
+                  <span
+                    class="text-lg font-display group-hover:text-primary transition-colors italic"
+                    >Regretfully decline</span
+                  >
+                </label>
+              </div>
+              <div class="  ">
+                <div class="flex flex-col gap-2">
+                  <label
+                    class="text-xs uppercase tracking-widest text-slate-400 font-bold"
+                    for="dietary"
+                    >Dietary Requirements</label
+                  >
+                  <p
+                    class="text-sm text-slate-500 dark:text-slate-400 italic pb-4"
+                  >
+                    Kindly note that the menu is a standard buffet. Options will
+                    be available one month before the wedding.
+                  </p>
+
+                  <input
+                    class="input-elegant py-3 text-lg font-display dark:text-white italic"
+                    id="dietary"
+                    placeholder="Allergies or restrictions e.g. no nuts, require on site epipen/asthma pump, etc."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <label
+                  class="text-xs uppercase tracking-widest text-slate-400 font-bold"
+                  for="message"
+                  >A Message for the Couple</label
+                >
+                <textarea
+                  class="bg-white input-elegant py-3 text-lg font-display dark:text-white italic resize-none"
+                  id="message"
+                  placeholder="Share a memory or happy blessings/prayers..."
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="text-center pt-8">
+                <button
+                  id="send-rsvp-btn"
+                  class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-5 px-16 rounded-full text-sm uppercase tracking-[0.3em] transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20 active:scale-95"
+                  type="button"
+                >
+                  Send RSVP
+                </button>
+                <p
+                  class="mt-8 text-xs text-slate-400 uppercase tracking-widest"
+                >
+                  Kindly respond by June 07, 2026
+                </p>
+              </div>
+            </form>
+            <div class="absolute -bottom-10 -right-10 opacity-10">
+              <span
+                class="material-symbols-outlined text-[150px] text-primary select-none"
+                >ink_pen</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Policy & Gift Side -->
+        <div class="lg:col-span-5 flex flex-col justify-center space-y-12">
+          <div class="space-y-8">
+            <div
+              class="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-primary/30"
+            >
+              <h4 class="text-sm font-bold uppercase tracking-widest mb-3">
+                Plus-One Policy
+              </h4>
+              <p
+                class="text-slate-600 dark:text-slate-400 leading-relaxed py-1"
+              >
+                Due to budgetary considerations, invitations are extended to
+                <strong> named guests only </strong>, being those having
+                received this invite.
+              </p>
+              <p
+                class="text-slate-600 dark:text-slate-400 leading-relaxed py-1"
+              >
+                Should a guest wish to attend with a plus one, a
+                <strong
+                  >prior request must be made and approved by the couple </strong
+                >. Kindly note that any approved plus one will require the guest
+                to cover the additional attendance costs, including dinner,
+                canapés, and décor contributions/costs.
+              </p>
+              <p
+                class="text-slate-600 dark:text-slate-400 leading-relaxed py-1"
+              >
+                A prior request must be submitted
+                <strong> before June 7th 2026</strong>.
+              </p>
+              <p
+                class="text-slate-600 dark:text-slate-400 leading-relaxed py-1"
+              >
+                We appreciate your understanding as we plan an intimate and
+                thoughtfully curated celebration.
+              </p>
+            </div>
+            <div
+              class="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-primary/30"
+            >
+              <h4 class="text-sm font-bold uppercase tracking-widest mb-3">
+                Adults-Only Celebration
+              </h4>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                We love your little ones, but our wedding will be an
+                <strong>adults-only</strong>
+                event to allow everyone a night of uninhibited celebration and
+                sacred reflection. We appreciate your understanding.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-champagne/50 dark:bg-slate-800/30 p-8 rounded-xl border border-primary/10"
+          >
+            <h4
+              class="text-sm font-bold uppercase tracking-widest mb-6 text-center"
+            >
+              Your Token of Love
+            </h4>
+            <div class="grid grid-cols-2 gap-8">
+              <div
+                id="open-gift-modal-fund"
+                class="text-center group cursor-pointer"
+                role="button"
+                tabindex="0"
+                aria-label="Open honeymoon gift details"
+              >
+                <div
+                  class="w-12 h-12 bg-white dark:bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4 border border-primary/20 group-hover:bg-primary transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary group-hover:text-white"
+                    >flight_takeoff</span
+                  >
+                </div>
+                <h5 class="text-xs font-bold uppercase tracking-widest mb-2">
+                  Honeymoon Fund
+                </h5>
+                <p
+                  class="text-[10px] text-slate-500 uppercase tracking-tighter"
+                >
+                  Help us explore
+                </p>
+              </div>
+              <div
+                id="open-gift-modal-home"
+                class="text-center group cursor-pointer"
+                role="button"
+                tabindex="0"
+                aria-label="Open home decor gift details"
+              >
+                <div
+                  class="w-12 h-12 bg-white dark:bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4 border border-primary/20 group-hover:bg-primary transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary group-hover:text-white"
+                    >home</span
+                  >
+                </div>
+                <h5 class="text-xs font-bold uppercase tracking-widest mb-2">
+                  Home Decor
+                </h5>
+                <p
+                  class="text-[10px] text-slate-500 uppercase tracking-tighter"
+                >
+                  Our nest registry
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div
+      id="gift-details-modal"
+      class="fixed inset-0 z-[110] hidden items-center justify-center p-6"
+      aria-hidden="true"
+    >
+      <div
+        id="gift-details-overlay"
+        class="absolute inset-0 bg-black/45 backdrop-blur-[2px]"
+      ></div>
+      <div
+        class="relative w-full max-w-2xl rounded-2xl border border-primary/30 bg-background-light p-8 md:p-10 shadow-2xl"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="gift-details-title"
+      >
+        <div class="absolute top-5 right-5 opacity-20">
+          <span class="material-symbols-outlined text-4xl text-primary"
+            >auto_awesome</span
+          >
+        </div>
+        <h3
+          id="gift-details-title"
+          class="text-3xl md:text-4xl font-medium text-deep-black mb-4"
+        >
+          A Note on Gifts
+        </h3>
+        <p class="text-slate-700 leading-relaxed mb-5">
+          Though presence is much appreciated and we understand the sacrifices
+          made to celebrate this occasion with us, should guests wish to gift us
+          as a blessing for our union, we prefer the following:
+        </p>
+        <ul class="space-y-3 text-slate-700">
+          <li class="flex gap-3">
+            <span class="text-primary">•</span>
+            <span>Living room decor pieces</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-primary">•</span>
+            <span
+              >Bedroom and bathroom accessories (mats, decor pieces, shoe and
+              bag stand)</span
+            >
+          </li>
+          <li class="flex gap-3">
+            <span class="text-primary">•</span>
+            <span
+              >Kitchen sets, including crockery, pots, pans, and related
+              items</span
+            >
+          </li>
+          <li class="flex gap-3">
+            <span class="text-primary">•</span>
+            <span
+              >Contribution towards our honeymoon (any amount is
+              appreciated)</span
+            >
+          </li>
+        </ul>
+        <div class="mt-8 flex justify-end">
+          <button
+            id="close-gift-details"
+            type="button"
+            class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 px-8 rounded-full text-xs uppercase tracking-[0.25em] transition-all"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="rsvp-reminder-modal"
+      class="fixed inset-0 z-[100] hidden items-center justify-center p-6"
+      aria-hidden="true"
+    >
+      <div
+        id="rsvp-reminder-overlay"
+        class="absolute inset-0 bg-black/50 backdrop-blur-[2px]"
+      ></div>
+      <div
+        class="relative w-full max-w-lg rounded-xl border border-primary/30 bg-background-light p-8 md:p-10 shadow-2xl"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="rsvp-reminder-title"
+      >
+        <h3
+          id="rsvp-reminder-title"
+          class="text-2xl md:text-3xl font-bold text-deep-black mb-4"
+        >
+          Your RSVP Has Been Received!
+        </h3>
+        <p></p>
+        <p class="text-slate-700 leading-relaxed">
+          <i>Just a Reminder:</i> <br />
+          There is a predetermined guest list.
+          <br />All RSVPs will be responded to by email in accordance with the
+          guest list.
+        </p>
+        <div class="mt-8 flex justify-end">
+          <button
+            id="close-rsvp-reminder"
+            type="button"
+            class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 px-8 rounded-full text-xs uppercase tracking-[0.25em] transition-all"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const openButton = document.getElementById("send-rsvp-btn");
+        const modal = document.getElementById("rsvp-reminder-modal");
+        const closeButton = document.getElementById("close-rsvp-reminder");
+        const overlay = document.getElementById("rsvp-reminder-overlay");
+
+        if (!openButton || !modal || !closeButton || !overlay) {
+          return;
+        }
+
+        function openModal() {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          modal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeModal() {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          modal.setAttribute("aria-hidden", "true");
+        }
+
+        openButton.addEventListener("click", openModal);
+        closeButton.addEventListener("click", closeModal);
+        overlay.addEventListener("click", closeModal);
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            closeModal();
+          }
+        });
+      })();
+    </script>
+    <script>
+      (function () {
+        const giftTriggers = [
+          document.getElementById("open-gift-modal-fund"),
+          document.getElementById("open-gift-modal-home"),
+        ];
+        const giftModal = document.getElementById("gift-details-modal");
+        const giftOverlay = document.getElementById("gift-details-overlay");
+        const closeGiftModal = document.getElementById("close-gift-details");
+
+        if (!giftModal || !giftOverlay || !closeGiftModal) {
+          return;
+        }
+
+        function showGiftModal() {
+          giftModal.classList.remove("hidden");
+          giftModal.classList.add("flex");
+          giftModal.setAttribute("aria-hidden", "false");
+        }
+
+        function hideGiftModal() {
+          giftModal.classList.add("hidden");
+          giftModal.classList.remove("flex");
+          giftModal.setAttribute("aria-hidden", "true");
+        }
+
+        function onTriggerKeydown(event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            showGiftModal();
+          }
+        }
+
+        giftTriggers.forEach(function (trigger) {
+          if (!trigger) {
+            return;
+          }
+          trigger.addEventListener("click", showGiftModal);
+          trigger.addEventListener("keydown", onTriggerKeydown);
+        });
+
+        closeGiftModal.addEventListener("click", hideGiftModal);
+        giftOverlay.addEventListener("click", hideGiftModal);
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            hideGiftModal();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

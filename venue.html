@@ -1,0 +1,569 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Babo &amp; Keagile | A Cinematic Opening</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#e7d7b6",
+              "background-light": "#f8f6f2",
+              "background-dark": "#111111",
+              "deep-black": "#111111",
+              champagne: "#e8d8b8",
+              taupe: "#81796a",
+            },
+            fontFamily: {
+              display: ["Newsreader", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Newsreader", serif;
+        background-color: #f5f5f3;
+        color: #1a1814;
+      }
+      .type-kicker {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+      }
+      .type-section-title {
+        font-family: "Newsreader", serif;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      .type-card-title {
+        font-family: "Newsreader", serif;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+      .type-body {
+        font-family: "Newsreader", serif;
+        font-weight: 400;
+        line-height: 1.7;
+      }
+      .type-meta {
+        font-family: "Newsreader", serif;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+      }
+      .type-button {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+      .silk-texture {
+        background-image: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(235, 233, 228, 0.2) 50%,
+          rgba(255, 255, 255, 0.4) 100%
+        );
+      }
+      .hover-border-taupe:hover {
+        box-shadow: 0 0 0 2px #81796a;
+      }
+      .editorial-shadow {
+        box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.08);
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <!-- Minimalist Navigation Bar -->
+    <header
+      class="relative z-50 w-full px-8 md:px-20 py-8 flex items-center justify-between"
+    >
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-taupe scale-75">flare</span>
+        <h2 class="text-sm font-semibold tracking-[0.3em] uppercase">
+          B&amp;K
+        </h2>
+      </div>
+      <nav
+        class="hidden md:flex items-center gap-12 text-[11px] uppercase tracking-[0.2em] font-medium text-deep-black/70"
+      >
+        <a class="hover:text-deep-black transition-colors" href="home.html"
+          >Our Story</a
+        >
+        <a class="hover:text-deep-black transition-colors" href="rsvp.html"
+          >RSVP</a
+        >
+        <a class="hover:text-deep-black transition-colors" href="venue.html"
+          >Venue & Accom</a
+        >
+        <a class="hover:text-deep-black transition-colors" href="attire.html"
+          >Attire</a
+        >
+      </nav>
+      <div class="md:hidden">
+        <span class="material-symbols-outlined cursor-pointer">menu</span>
+      </div>
+    </header>
+    <main class="relative overflow-hidden silk-texture">
+      <!-- Hero Section -->
+      <section class="relative pt-20 pb-12 px-6">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+          <span class="type-kicker text-primary font-bold">The Journey</span>
+          <h2
+            class="type-section-title text-5xl md:text-7xl font-extralight tracking-tighter text-slate-900 dark:text-slate-100"
+          >
+            Journey With Us
+          </h2>
+          <p
+            class="type-body text-slate-500 dark:text-slate-400 max-w-xl mx-auto text-sm leading-relaxed font-light"
+          >
+            A collection of refined spaces and pathways curated for our sacred
+            union. Explore the venues and accommodations selected for your
+            comfort.
+          </p>
+        </div>
+      </section>
+      <!-- Visual Anchor -->
+      <section class="w-full h-[400px] relative overflow-hidden">
+        <div class="absolute inset-0 bg-slate-900/40 z-10"></div>
+        <img
+          alt="Elegant wedding venue architecture"
+          class="w-full h-full object-cover grayscale-[20%]"
+          data-alt="Luxurious golden-hour view of a grand cathedral and ballroom entrance"
+          src="Assets/destination22.jpg"
+        />
+        <div class="absolute inset-0 z-20 flex items-center justify-center">
+          <div class="text-center">
+            <p class="type-kicker text-white mb-4">The Destination</p>
+            <h2 class="type-section-title text-white text-4xl italic">
+              Pretoria, South Africa
+            </h2>
+          </div>
+        </div>
+      </section>
+      <!-- Main Venue Spotlight -->
+      <section class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+        <div
+          class="group relative bg-white dark:bg-slate-900 rounded-xl overflow-hidden editorial-shadow hover-border-taupe transition-all duration-500"
+        >
+          <div class="flex flex-col lg:flex-row">
+            <div class="w-full lg:w-3/5 h-[400px] lg:h-[600px] relative">
+              <img
+                alt="De Harte Wedding Venue"
+                class="w-full h-full object-cover"
+                data-alt="Luxurious wedding venue with white architecture and lush gardens"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvm9wXBdK6AV0utzc8AMAo1JlNyNIa-NnQjgSQkwSSWtZKbFzLU82bWQGsWEljVnu0wrX40kVad0a3DlN58TZO1iNI0vY9hx83FCqZxJmLakVsCPZuCTPMPsSfp0xpTUZ39y99F3fzV__zsN8XbIJnFpuSFA29r_aHNpMry_uroWRgfnLPOIqDBZb22iXFXImZjU58wtpTnP51APQs8xN1uVjzDGPOOHLazsWoA56a1lGWboBSIH7eWm-Mr7s4t4gCFPLA3ZT53hBb"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent lg:hidden"
+              ></div>
+            </div>
+            <div
+              class="w-full lg:w-2/5 p-8 lg:p-16 flex flex-col justify-center bg-silk-white dark:bg-slate-900/50"
+            >
+              <span class="type-kicker text-primary mb-4">The Sanctuary</span>
+              <h3
+                class="type-section-title text-3xl font-light mb-6 tracking-tight"
+              >
+                De Harte Wedding Venue
+              </h3>
+              <p
+                class="type-body text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 font-light italic"
+              >
+                "Where elegance meets the stillness of nature. A minimalist
+                retreat designed for profound celebration."
+              </p>
+              <div class="space-y-4 mb-10">
+                <div class="flex items-start gap-4">
+                  <span class="material-symbols-outlined text-primary text-xl"
+                    >location_on</span
+                  >
+                  <p
+                    class="type-meta text-xs tracking-wide text-slate-600 dark:text-slate-300"
+                  >
+                    Plot 123, Kameeldrift East, Pretoria, South Africa
+                  </p>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span class="material-symbols-outlined text-primary text-xl"
+                    >event_available</span
+                  >
+                  <p
+                    class="type-meta text-xs tracking-wide text-slate-600 dark:text-slate-300"
+                  >
+                    Saturday, 24th October 2024
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-4">
+                <button
+                  class="type-button bg-slate-900 dark:bg-primary text-white dark:text-background-dark px-8 py-3 rounded-full"
+                >
+                  Get Directions
+                </button>
+                <button
+                  class="type-button border border-slate-200 dark:border-slate-700 px-8 py-3 rounded-full hover:bg-slate-50 transition-colors"
+                >
+                  Explore Venue
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accommodation Grid -->
+      <!-- Content Container -->
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <!-- Venue Section -->
+        <section class="mb-20">
+          <div class="flex items-center gap-3 mb-8">
+            <span class="material-symbols-outlined text-primary text-3xl"
+              >hotel</span
+            >
+            <h2
+              class="type-section-title text-3xl font-bold text-bronze uppercase tracking-tight"
+            >
+              Stay With Us
+            </h2>
+          </div>
+          <div
+            class="group relative bg-white dark:bg-slate-900 rounded-xl overflow-hidden editorial-shadow hover-border-taupe transition-all duration-500 mb-5 flex flex-col lg:flex-row"
+          >
+            <div
+              class="lg:w-1/2 h-80 lg:h-auto bg-cover bg-center"
+              data-alt="Elegant South African estate with proteas and rolling hills"
+              style="background-image: url(hotels/anew.jpg)"
+            ></div>
+            <div class="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+              <h3 class="type-card-title text-2xl text-bronze mb-4">
+                Anew Hotel Capital, Pretoria
+              </h3>
+              <p class="type-body text-slate-700 leading-relaxed mb-6">
+                Situated in the Pretoria CBD, the 4-star ANEW Hotel Capital is
+                the perfect base from which to explore one of SA’s capital
+                cities. This hotel in Pretoria is perfect for business
+                travellers and conference delegates, enjoy the sight of the
+                famous Jacaranda in spring, and discover South African treasures
+                like Loftus Versfeld and the Voortrekker Monument.
+              </p>
+              <div class="space-y-3 mb-8">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-primary"
+                    >map</span
+                  >
+                  <p class="type-meta text-slate-600 text-sm">
+                    390 van der Walt Street/ 390 Lilian Ngoyi Street, Pretoria
+                    Central, 0002 Pretoria, South Africa
+                  </p>
+                </div>
+              </div>
+              <a
+                class="type-button inline-flex items-center justify-center gap-2 bg-primary text-bronze py-3 px-8 rounded-lg hover:bg-primary/90 transition-all w-full md:w-max shadow-sm"
+                data-location="Franschhoek, South Africa"
+                target="_blank"
+                href="https://www.booking.com/hotel/za/protea-capital.en-gb.html?aid=318615&label=New_English_EN_ALL-GBIECAUS_5226333385-zrfE0CU6K_HWeoloJw*PrQS640874751349%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=d6514278b020260f0ae5c2c1b335b533&dest_id=-1273769&dest_type=city&dist=0&group_adults=1&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=1&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1771771679&srpvid=ce98615ba5a60161&type=total&ucfs=1&checkin=&checkout="
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >directions</span
+                >
+                Book Now
+              </a>
+            </div>
+          </div>
+          <div
+            class="group relative bg-white dark:bg-slate-900 rounded-xl overflow-hidden editorial-shadow hover-border-taupe transition-all duration-500 mb-5 flex flex-col lg:flex-row"
+          >
+            <div class="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+              <h3 class="type-card-title text-2xl text-bronze mb-4">
+                Kievits Kroon Gauteng Wine Estate, Pretoria
+              </h3>
+              <p class="type-body text-slate-700 leading-relaxed mb-6">
+                Situated in the Pretoria CBD, the 4-star ANEW Hotel Capital is
+                the perfect base from which to explore one of SA’s capital
+                cities. This hotel in Pretoria is perfect for business
+                travellers and conference delegates, enjoy the sight of the
+                famous Jacaranda in spring, and discover South African treasures
+                like Loftus Versfeld and the Voortrekker Monument.
+              </p>
+              <div class="space-y-3 mb-8">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-primary"
+                    >map</span
+                  >
+                  <p class="type-meta text-slate-600 text-sm">
+                    390 van der Walt Street/ 390 Lilian Ngoyi Street, Pretoria
+                    Central, 0002 Pretoria, South Africa
+                  </p>
+                </div>
+              </div>
+              <a
+                class="type-button inline-flex items-center justify-center gap-2 bg-primary text-bronze py-3 px-8 rounded-lg hover:bg-primary/90 transition-all w-full md:w-max shadow-sm"
+                data-location="Franschhoek, South Africa"
+                target="_blank"
+                href="https://www.booking.com/hotel/za/kievits-kroon-country-estate.en-gb.html?aid=356980&label=gog235jc-10CAso-wFCHGtpZXZpdHMta3Jvb24tY291bnRyeS1lc3RhdGVIM1gDaCSIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqyT7MwGwAIB0gIkNjRiNTJhMjUtOGY3Ny00NWIyLWI4YzgtODdlMmFhMTNkYzYx2AIB4AIB&sid=d6514278b020260f0ae5c2c1b335b533&dist=0&keep_landing=1&sb_price_type=total&type=total&chal_t=1771768237150&force_referer=https%3A%2F%2Fwww.google.com%2F"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >directions</span
+                >
+                Book Now
+              </a>
+            </div>
+            <div
+              class="lg:w-1/2 h-80 lg:h-auto bg-cover bg-center"
+              data-alt="Elegant South African estate with proteas and rolling hills"
+              style="background-image: url(hotels/kievits.jpg)"
+            ></div>
+          </div>
+        </section>
+
+        <!-- Travel Tips -->
+        <section>
+          <div class="flex items-center gap-3 mb-8">
+            <span class="material-symbols-outlined text-primary text-3xl"
+              >info</span
+            >
+            <h2
+              class="type-section-title text-3xl font-bold text-bronze uppercase tracking-tight"
+            >
+              Travel Notes
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div
+              class="flex gap-4 p-6 bg-cream/60 rounded-xl border border-primary/20"
+            >
+              <div class="flex-shrink-0">
+                <span
+                  class="material-symbols-outlined text-4xl text-primary font-light"
+                  >flight_takeoff</span
+                >
+              </div>
+              <div>
+                <h5 class="type-card-title text-bronze mb-1">Getting Here</h5>
+                <p class="type-body text-slate-600 text-sm">
+                  O.R. Tambo International Airport is the nearest major airport,
+                  approximately 45–60 minutes from Pretoria, depending on
+                  traffic. We recommend renting a car or booking a private
+                  transfer.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex gap-4 p-6 bg-cream/60 rounded-xl border border-primary/20"
+            >
+              <div class="flex-shrink-0">
+                <span
+                  class="material-symbols-outlined text-4xl text-primary font-light"
+                  >thermostat</span
+                >
+              </div>
+              <div>
+                <h5 class="type-card-title text-bronze mb-1">Spring Weather</h5>
+                <p class="type-body text-slate-600 text-sm">
+                  September brings beautiful blooms, warmth and a refreshing
+                  breeze. However, evenings can be crisp; a light wrap or blazer
+                  is recommended for the evening reception.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex gap-4 p-6 bg-cream/60 rounded-xl border border-primary/20"
+            >
+              <div class="flex-shrink-0">
+                <span
+                  class="material-symbols-outlined text-4xl text-primary font-light"
+                  >local_taxi</span
+                >
+              </div>
+              <div>
+                <h5 class="type-card-title text-bronze mb-1">
+                  Local Transport
+                </h5>
+                <p class="type-body text-slate-600 text-sm">
+                  While a shuttle has been arranged to and from the venue, we
+                  cannot accomodate for everyone. Guests are
+                  encouraged to use their personal vehicles to attend the
+                  ceremony for ease of commuting to your preferred accommodation
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex gap-4 p-6 bg-cream/60 rounded-xl border border-primary/20"
+            >
+              <div class="flex-shrink-0">
+                <span
+                  class="material-symbols-outlined text-4xl text-primary font-light"
+                  >wine_bar</span
+                >
+              </div>
+              <div>
+                <h5 class="type-card-title text-bronze mb-1">
+                  Local Attractions
+                </h5>
+                <p class="type-body text-slate-600 text-sm">
+                  You are free and welcome to visit any and all other
+                  attractions in Pretoria and the surrounding areas. We
+                  recommend the Pretoria Botanical Gardens.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Footer Call to Action -->
+      <section class="max-w-7xl mx-auto px-6 py-24 text-center">
+        <div
+          class="p-16 rounded-xl bg-slate-900 text-white relative overflow-hidden"
+        >
+          <div class="absolute inset-0 opacity-20">
+            <img
+              alt="Elegant background"
+              class="w-full h-full object-cover"
+              data-alt="Soft out of focus luxury silk pattern"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtZHo1yISFfTqSTMksSPLNSPtRqI1ATKegAPvKV8TRCYkpDJ0VgC_bd7pWyNUX5fAgl2ImvDfKrRFucCyR1MfqyhdPtQqAK1o-kw7pRQePLmGy7MgCyFTkR2S8UZEjstcy5Sarq95nt7dpDCQFQA4LNGB-KXVt_tfd_pVyzCiIpysFovW5Nxk_U0BGBtbfvESZ01U2afuHrboQqn04XgoUsbB8mQmheluGxGRU12SKbcQQnCjJ5rttzLASyKWQgyQxtgBa6uBALQxo"
+            />
+          </div>
+          <div class="relative z-10 space-y-8">
+            <h4 class="type-section-title text-3xl font-light tracking-tight">
+              Need a hand?
+            </h4>
+            <p
+              class="type-body text-slate-400 text-sm max-w-lg mx-auto font-light"
+            >
+              Our dedicated wedding oversears Bose Njabulo(Maid of
+              Honour/Brides's sister) & Lekgotla Lesolle (Best man/Grooms's
+              brother) are available to handle bookings, transfers, and any
+              special requests for your journey.
+            </p>
+            <button
+              id="open-overseers-modal"
+              class="type-button bg-primary text-background-dark px-10 py-4 rounded-full hover:scale-105 transition-transform"
+            >
+              Contact overseers
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div
+      id="overseers-modal"
+      class="fixed inset-0 z-[100] hidden items-center justify-center p-6"
+      aria-hidden="true"
+    >
+      <div
+        id="overseers-modal-overlay"
+        class="absolute inset-0 bg-black/50 backdrop-blur-[2px]"
+      ></div>
+      <div
+        class="relative w-full max-w-3xl rounded-xl border border-primary/25 bg-background-light p-8 md:p-10 shadow-2xl"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="overseers-modal-title"
+      >
+        <h3
+          id="overseers-modal-title"
+          class="type-section-title text-2xl md:text-3xl font-light tracking-tight text-slate-900 mb-8"
+        >
+          Contact Overseers
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-0">
+          <div class="pr-0 md:pr-10">
+            <h4 class="type-card-title text-lg text-slate-900">Bose Njabulo</h4>
+            <p class="type-body italic mb-4">Maid of Honor/Bride's Sister</p>
+            <div class="space-y-2 text-sm text-slate-600 type-meta">
+              <p>Phone: +27 XX XXX XXXX</p>
+              <p>Email: bose@example.com</p>
+            </div>
+          </div>
+          <div class="relative pl-0 md:pl-10">
+            <div
+              class="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-slate-300"
+            ></div>
+            <h4 class="type-card-title text-lg text-slate-900">
+              Lekgotla Lesolle
+            </h4>
+            <p class="type-body italic mb-4">Best Man/Groom's Brother</p>
+            <div class="space-y-2 text-sm text-slate-600 type-meta">
+              <p>Phone: +27 XX XXX XXXX</p>
+              <p>Email: lekgotla@example.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 flex justify-end">
+          <button
+            id="close-overseers-modal"
+            type="button"
+            class="type-button bg-primary text-background-dark px-8 py-3 rounded-full hover:scale-105 transition-transform"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const openBtn = document.getElementById("open-overseers-modal");
+        const modal = document.getElementById("overseers-modal");
+        const overlay = document.getElementById("overseers-modal-overlay");
+        const closeBtn = document.getElementById("close-overseers-modal");
+
+        if (!openBtn || !modal || !overlay || !closeBtn) {
+          return;
+        }
+
+        function openModal() {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          modal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeModal() {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          modal.setAttribute("aria-hidden", "true");
+        }
+
+        openBtn.addEventListener("click", openModal);
+        closeBtn.addEventListener("click", closeModal);
+        overlay.addEventListener("click", closeModal);
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            closeModal();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
