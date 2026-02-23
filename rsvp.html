@@ -374,19 +374,19 @@
       </section>
     </main>
     <div
-      id="gift-details-modal"
+      id="honeymoon-modal"
       class="fixed inset-0 z-[110] hidden items-center justify-center p-6"
       aria-hidden="true"
     >
       <div
-        id="gift-details-overlay"
+        id="honeymoon-modal-overlay"
         class="absolute inset-0 bg-black/45 backdrop-blur-[2px]"
       ></div>
       <div
         class="relative w-full max-w-2xl rounded-2xl border border-primary/30 bg-background-light p-8 md:p-10 shadow-2xl"
         role="dialog"
         aria-modal="true"
-        aria-labelledby="gift-details-title"
+        aria-labelledby="honeymoon-modal-title"
       >
         <div class="absolute top-5 right-5 opacity-20">
           <span class="material-symbols-outlined text-4xl text-primary"
@@ -394,15 +394,57 @@
           >
         </div>
         <h3
-          id="gift-details-title"
+          id="honeymoon-modal-title"
           class="text-3xl md:text-4xl font-medium text-deep-black mb-4"
         >
-          A Note on Gifts
+          Honeymoon Fund
+        </h3>
+        <p class="text-slate-700 leading-relaxed">
+          Financial contributions are warmly accepted as a honeymoon gift. Any
+          amount is appreciated and will be a meaningful blessing as we begin
+          this new chapter together.
+        </p>
+        <div class="mt-8 flex justify-end">
+          <button
+            id="close-honeymoon-modal"
+            type="button"
+            class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 px-8 rounded-full text-xs uppercase tracking-[0.25em] transition-all"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="home-decor-modal"
+      class="fixed inset-0 z-[110] hidden items-center justify-center p-6"
+      aria-hidden="true"
+    >
+      <div
+        id="home-decor-modal-overlay"
+        class="absolute inset-0 bg-black/45 backdrop-blur-[2px]"
+      ></div>
+      <div
+        class="relative w-full max-w-2xl rounded-2xl border border-primary/30 bg-background-light p-8 md:p-10 shadow-2xl"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="home-decor-modal-title"
+      >
+        <div class="absolute top-5 right-5 opacity-20">
+          <span class="material-symbols-outlined text-4xl text-primary"
+            >home</span
+          >
+        </div>
+        <h3
+          id="home-decor-modal-title"
+          class="text-3xl md:text-4xl font-medium text-deep-black mb-4"
+        >
+          Home Decor Gifts
         </h3>
         <p class="text-slate-700 leading-relaxed mb-5">
           Though presence is much appreciated and we understand the sacrifices
-          made to celebrate this occasion with us, should guests wish to gift us
-          as a blessing for our union, we prefer the following:
+          made to celebrate this occasion with us, should guests wish to gift
+          us as a blessing for our union, we prefer the following;
         </p>
         <ul class="space-y-3 text-slate-700">
           <li class="flex gap-3">
@@ -423,17 +465,10 @@
               items</span
             >
           </li>
-          <li class="flex gap-3">
-            <span class="text-primary">•</span>
-            <span
-              >Contribution towards our honeymoon (any amount is
-              appreciated)</span
-            >
-          </li>
         </ul>
         <div class="mt-8 flex justify-end">
           <button
-            id="close-gift-details"
+            id="close-home-decor-modal"
             type="button"
             class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 px-8 rounded-full text-xs uppercase tracking-[0.25em] transition-all"
           >
@@ -516,50 +551,85 @@
     </script>
     <script>
       (function () {
-        const giftTriggers = [
-          document.getElementById("open-gift-modal-fund"),
-          document.getElementById("open-gift-modal-home"),
-        ];
-        const giftModal = document.getElementById("gift-details-modal");
-        const giftOverlay = document.getElementById("gift-details-overlay");
-        const closeGiftModal = document.getElementById("close-gift-details");
+        const fundTrigger = document.getElementById("open-gift-modal-fund");
+        const homeTrigger = document.getElementById("open-gift-modal-home");
 
-        if (!giftModal || !giftOverlay || !closeGiftModal) {
+        const honeymoonModal = document.getElementById("honeymoon-modal");
+        const honeymoonOverlay = document.getElementById(
+          "honeymoon-modal-overlay"
+        );
+        const honeymoonClose = document.getElementById("close-honeymoon-modal");
+
+        const homeDecorModal = document.getElementById("home-decor-modal");
+        const homeDecorOverlay = document.getElementById(
+          "home-decor-modal-overlay"
+        );
+        const homeDecorClose = document.getElementById("close-home-decor-modal");
+
+        if (
+          !fundTrigger ||
+          !homeTrigger ||
+          !honeymoonModal ||
+          !honeymoonOverlay ||
+          !honeymoonClose ||
+          !homeDecorModal ||
+          !homeDecorOverlay ||
+          !homeDecorClose
+        ) {
           return;
         }
 
-        function showGiftModal() {
-          giftModal.classList.remove("hidden");
-          giftModal.classList.add("flex");
-          giftModal.setAttribute("aria-hidden", "false");
+        function showModal(modal) {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          modal.setAttribute("aria-hidden", "false");
         }
 
-        function hideGiftModal() {
-          giftModal.classList.add("hidden");
-          giftModal.classList.remove("flex");
-          giftModal.setAttribute("aria-hidden", "true");
+        function hideModal(modal) {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          modal.setAttribute("aria-hidden", "true");
         }
 
-        function onTriggerKeydown(event) {
+        function onTriggerKeydown(event, modal) {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-            showGiftModal();
+            showModal(modal);
           }
         }
 
-        giftTriggers.forEach(function (trigger) {
-          if (!trigger) {
-            return;
-          }
-          trigger.addEventListener("click", showGiftModal);
-          trigger.addEventListener("keydown", onTriggerKeydown);
+        fundTrigger.addEventListener("click", function () {
+          showModal(honeymoonModal);
+        });
+        fundTrigger.addEventListener("keydown", function (event) {
+          onTriggerKeydown(event, honeymoonModal);
         });
 
-        closeGiftModal.addEventListener("click", hideGiftModal);
-        giftOverlay.addEventListener("click", hideGiftModal);
+        homeTrigger.addEventListener("click", function () {
+          showModal(homeDecorModal);
+        });
+        homeTrigger.addEventListener("keydown", function (event) {
+          onTriggerKeydown(event, homeDecorModal);
+        });
+
+        honeymoonClose.addEventListener("click", function () {
+          hideModal(honeymoonModal);
+        });
+        honeymoonOverlay.addEventListener("click", function () {
+          hideModal(honeymoonModal);
+        });
+
+        homeDecorClose.addEventListener("click", function () {
+          hideModal(homeDecorModal);
+        });
+        homeDecorOverlay.addEventListener("click", function () {
+          hideModal(homeDecorModal);
+        });
+
         document.addEventListener("keydown", function (event) {
           if (event.key === "Escape") {
-            hideGiftModal();
+            hideModal(honeymoonModal);
+            hideModal(homeDecorModal);
           }
         });
       })();
