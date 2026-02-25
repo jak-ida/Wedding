@@ -328,17 +328,20 @@
     <div
       class="relative min-h-screen w-full flex flex-col items-center justify-between"
     >
-      <!-- Background Layer with Soft-Focus Image -->
+      <!-- Background Layer with Spring Meadow Video -->
       <div class="absolute inset-0 z-0 overflow-hidden">
-        <div
-          class="absolute inset-0 z-10"
-        ></div>
-        <img
-          alt="Soft focus romantic wedding background"
-          class="w-full h-full object-cover opacity-60 scale-105"
-          data-alt="Soft focus romantic image of a luxury wedding venue"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7isy7XKERbeLn9WqgRtfiOESRKuoHvuYvaUo1l8k8aGYrLvk4F3ix3QuB1dMH70Dk5X2PqgJeNT4INwzY0IiTFAqdtV_XCrGlU63_RS9kGMv2_JIKmgYgSmrHqXqbzwv7_8F4wFk8S5g64kB9kqNm9d8MF950d09yXPjcfOHAFxI-YHYJAFA-JBfs9yq4mGzmeivyTSvrKP-INv9HaAVTkLqJDQ7Gvv5OD9G4jk4xvHcCLKJaWM-1Lv4nXbb34tidWjmuv3dwUDGX"
-        />
+        <div class="absolute inset-0 z-10 hero-overlay" aria-hidden="true"></div>
+        <video
+          id="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="absolute inset-0 w-full h-full object-cover opacity-60 scale-105"
+          aria-label="Soft focus spring flowers and meadow wedding background"
+          src="https://videos.pexels.com/video-files/5271943/5271943-hd_1920_1080_25fps.mp4"
+        >
+        </video>
       </div>
       <!-- Minimalist Navigation Bar -->
       <header
@@ -866,6 +869,15 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
         if (hasSeenPrelude) {
           overlay.remove();
           body.classList.remove("prelude-locked");
+          function tryPlayHero() {
+            var v = document.getElementById("hero-video");
+            if (v && typeof v.play === "function") v.play().catch(function () {});
+          }
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", tryPlayHero);
+          } else {
+            setTimeout(tryPlayHero, 0);
+          }
           return;
         }
 
@@ -875,10 +887,18 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
 
         let started = false;
 
+        function playHeroVideo() {
+          const heroVideo = document.getElementById("hero-video");
+          if (heroVideo && typeof heroVideo.play === "function") {
+            heroVideo.play().catch(function () {});
+          }
+        }
+
         function startPrelude() {
           if (started) return;
           started = true;
           window.hasSeenPrelude = true;
+          playHeroVideo();
           try {
             localStorage.setItem(preludeSeenKey, "true");
           } catch (error) {
@@ -894,6 +914,7 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
           window.setTimeout(function () {
             overlay.remove();
             body.classList.remove("prelude-locked");
+            playHeroVideo();
           }, 2300);
         }
 
