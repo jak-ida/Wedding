@@ -34,6 +34,8 @@
               "deep-black": "#111111",
               champagne: "#e8d8b8",
               taupe: "#81796a",
+              pink: "#ebceca",
+              heavyPink: "#edabad"
             },
             fontFamily: {
               display: ["Newsreader", "serif"],
@@ -65,15 +67,22 @@
       body {
         font-family: "Newsreader", serif;
       }
+      .glass-header {
+        background: rgba(244, 236, 231, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+      }
       .letter-spacing-widest {
         letter-spacing: 0.25em;
       }
       .hero-overlay {
         background: linear-gradient(
           to bottom,
-          rgba(248, 246, 242, 0.4) 0%,
-          rgba(248, 246, 242, 0.2) 50%,
-          rgba(248, 246, 242, 0.8) 100%
+          rgba(248, 246, 242, 0.28) 0%,
+          rgba(248, 246, 242, 0.16) 50%,
+          rgba(248, 246, 242, 0.5) 100%
         );
       }
       .silk-texture {
@@ -328,27 +337,27 @@
     <div
       class="relative min-h-screen w-full flex flex-col items-center justify-between"
     >
-      <!-- Background Layer with Spring Meadow Video -->
+      <!-- Background Layer with Calm Ocean Waves (no overlay - blue shows through) -->
       <div class="absolute inset-0 z-0 overflow-hidden">
-        <div class="absolute inset-0 z-10 hero-overlay" aria-hidden="true"></div>
+        <div class="absolute inset-0 z-10 " aria-hidden="true"></div>
         <video
           id="hero-video"
           autoplay
           muted
           loop
           playsinline
-          class="absolute inset-0 w-full h-full object-cover opacity-60 scale-105"
-          aria-label="Soft focus spring flowers and meadow wedding background"
-          src="https://videos.pexels.com/video-files/5271943/5271943-hd_1920_1080_25fps.mp4"
+          class="absolute inset-0 w-full h-full object-cover scale-105"
+          aria-label="Calm blue ocean waves wedding background"
+          src="Assets/Hero_video_ocean_3.mp4"
         >
         </video>
-   </div>
+      </div>
       <!-- Minimalist Navigation Bar -->
       <header
-        class="relative z-50 w-full px-8 md:px-20 py-8 flex items-center justify-between"
+        class="relative z-50 w-full px-8 md:px-20 py-8 flex items-center justify-between glass-header text-white"
       >
         <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-taupe scale-75"
+          <span class="material-symbols-outlined text-white scale-75"
             >flare</span
           >
           <h2 class="text-sm font-semibold tracking-[0.3em] uppercase">
@@ -356,18 +365,18 @@
           </h2>
         </div>
         <nav
-          class="hidden md:flex items-center gap-12 text-[11px] uppercase tracking-[0.2em] font-medium text-deep-black/70"
+          class="hidden md:flex items-center gap-12 text-[11px] uppercase tracking-[0.2em] font-medium text-white/80"
         >
-          <a class="hover:text-deep-black transition-colors" href="home.html"
+          <a class="hover:text-white transition-colors" href="home.html"
             >Our Story</a
           >
-          <a class="hover:text-deep-black transition-colors" href="rsvp.html"
+          <a class="hover:text-white transition-colors" href="rsvp.html"
             >RSVP</a
           >
-          <a class="hover:text-deep-black transition-colors" href="venue.html"
+          <a class="hover:text-white transition-colors" href="venue.html"
             >Venue & Accom</a
           >
-          <a class="hover:text-deep-black transition-colors" href="attire.html"
+          <a class="hover:text-white transition-colors" href="attire.html"
             >Attire</a
           >
           
@@ -384,7 +393,7 @@
           <!-- Top Line -->
           <div class="animate-fade-in">
             <p
-              class="text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium text-taupe mb-4"
+              class="text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium text-white mb-4"
             >
               Together with their families
             </p>
@@ -396,7 +405,7 @@
             >
               Keagile
               <span
-                class="text-4xl md:text-6xl lg:text-7xl align-middle not-italic font-thin mx-2 text-primary"
+                class="text-4xl md:text-6xl lg:text-7xl align-middle not-italic font-thin mx-2 text-pink"
                 >&amp;</span
               >
               Babo
@@ -405,7 +414,7 @@
           <!-- Subheading & Date -->
           <div class="space-y-2 max-w-2xl mx-auto">
             <p
-              class="text-lg md:text-xl font-light text-deep-black/80 leading-relaxed italic"
+              class="text-lg md:text-xl font-light text-white leading-relaxed italic"
             >
               Invite you to celebrate their union
             </p>
@@ -415,7 +424,7 @@
           <div class="pt-8">
             <a
                 href="venue.html"
-                class="group relative inline-flex items-center justify-center px-10 py-4 bg-champagne text-deep-black text-xs font-bold uppercase tracking-[0.2em] rounded-none transition-all duration-300 hover:bg-taupe hover:text-white border border-taupe/30"
+                class="group relative inline-flex items-center justify-center px-10 py-4 bg-pink text-deep-black text-xs font-bold uppercase tracking-[0.2em] rounded-none transition-all duration-300 hover:bg-taupe hover:text-white border border-taupe/30"
             >
                 <span class="relative z-10">Enter Our Celebration</span>
                 <div
@@ -430,10 +439,10 @@
         class="relative z-20 w-full py-12 flex flex-col items-center gap-4"
       >
         <div
-          class="flex flex-col items-center gap-2 opacity-40 group cursor-pointer"
+          class="flex flex-col items-center gap-2  group cursor-pointer"
         >
           <p
-            class="text-[9px] uppercase tracking-[0.3em] font-bold  transition-colors"
+            class="text-[9px] uppercase tracking-[0.3em] font-bold text-white transition-colors"
           >
             Scroll to Discover
           </p>
