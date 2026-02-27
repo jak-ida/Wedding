@@ -147,10 +147,10 @@
                 <div class="attire-carousel-slide min-w-full h-full flex-shrink-0 bg-contain bg-center bg-no-repeat cursor-pointer" style="background-image: url('Assets/Mood/mood_spring_bright.jpg');" data-lightbox-src="Assets/Mood/mood_spring_bright.jpg" role="img" aria-label="Spring Bright mood – click to view full size"></div>
               </div>
             </div>
-            <button type="button" id="attire-carousel-prev" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-black/50 border border-black/10 dark:border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md hover:bg-white dark:hover:bg-black/70 z-10" aria-label="Previous image">
+            <button type="button" id="attire-carousel-prev" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-black/50 border border-black/10 dark:border-white/20 flex items-center justify-center shadow-md hover:bg-white dark:hover:bg-black/70 z-10 transition-colors" aria-label="Previous image">
               <span class="material-symbols-outlined text-xl text-deep-black dark:text-white">chevron_left</span>
             </button>
-            <button type="button" id="attire-carousel-next" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-black/50 border border-black/10 dark:border-white/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md hover:bg-white dark:hover:bg-black/70 z-10" aria-label="Next image">
+            <button type="button" id="attire-carousel-next" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-black/50 border border-black/10 dark:border-white/20 flex items-center justify-center shadow-md hover:bg-white dark:hover:bg-black/70 z-10 transition-colors" aria-label="Next image">
               <span class="material-symbols-outlined text-xl text-deep-black dark:text-white">chevron_right</span>
             </button>
             <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -309,13 +309,16 @@
           class="absolute inset-0 bg-black/50 backdrop-blur-[2px]"
         ></div>
         <div
-          class="relative z-10 w-full max-w-5xl rounded-2xl border border-primary/30 bg-background-light dark:bg-background-dark text-deep-black dark:text-slate-100 shadow-2xl overflow-hidden flex flex-col md:flex-row md:h-[500px]"
+          class="relative z-10 w-full max-w-5xl max-h-[90vh] md:max-h-[none] rounded-2xl border border-primary/30 bg-background-light dark:bg-background-dark text-deep-black dark:text-slate-100 shadow-2xl overflow-y-auto overflow-x-hidden md:overflow-hidden flex flex-col md:flex-row md:h-[500px]"
           role="dialog"
           aria-modal="true"
           aria-labelledby="moodboard-modal-title"
         >
           <div class="flex-1 flex items-center justify-center px-4 md:px-10 md:py-10">
             <div class="w-full max-w-xl">
+              <p class="text-[10px] md:text-xs text-slate-500 dark:text-slate-400 mb-3 text-center">
+                Click a color to see its mood image
+              </p>
               <div class="grid grid-cols-4 gap-0">
                 <div
                   class="aspect-square bg-white/80 border border-black/10 dark:border-white/10"
@@ -420,17 +423,20 @@
               </p>
               <h3
                 id="moodboard-color-name"
-                class="text-3xl md:text-4xl font-light tracking-tight mb-6"
+                class="text-3xl md:text-4xl font-light tracking-tight mb-1"
               >
                 Sage Green
               </h3>
+              <p class="text-[10px] md:text-xs text-slate-500 dark:text-slate-400 mb-4">
+                Click on image for full screen view
+              </p>
               <div
                 id="moodboard-image-wrap"
-                class="flex-1 min-h-[200px] rounded-xl overflow-hidden border border-black/10 dark:border-white/10 bg-black/5 flex items-center justify-center cursor-pointer"
+                class="flex-1 min-h-[140px] max-h-[32vh] md:max-h-none md:min-h-[200px] rounded-xl overflow-hidden border border-black/10 dark:border-white/10 bg-black/5 flex items-center justify-center cursor-pointer"
               >
                 <img
                   id="moodboard-color-image"
-                  class="w-full h-full object-contain pointer-events-none"
+                  class="w-full h-full object-contain object-center pointer-events-none"
                   src="Assets/mood_sage.jpg"
                   alt="Sage Green moodboard – click to view full size"
                 />
