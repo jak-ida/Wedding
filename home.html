@@ -216,7 +216,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        padding: 46px 24px 120px;
+        padding: 30px 16px 90px;
         color: #2f2922;
         background:
           radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.35), transparent 50%),
@@ -313,7 +313,7 @@
           <div class="prelude-preview"></div>
           <div class="prelude-front">
             <div class="prelude-front-face">
-              <h1 class="text-9xl great-vibes-regular mb-4">Keagile &amp; Babo</h1>
+              <h1 class="text-5xl sm:text-7xl md:text-9xl great-vibes-regular mb-4">Keagile &amp; Babo</h1>
               <p class="prelude-subtitle">A Celebration of Love</p>
             </div>
             <div class="prelude-front-back" aria-hidden="true"></div>
@@ -343,7 +343,7 @@
       </div>
       <!-- Minimalist Navigation Bar -->
       <header
-        class="relative z-50 w-full px-8 md:px-20 py-8 flex items-center justify-between"
+        class="fixed top-0 left-0 right-0 z-50 w-full px-8 md:px-20 py-6 flex items-center justify-between bg-background-light/90 backdrop-blur-md border-b border-primary/10"
       >
         <div class="flex items-center gap-2">
           <span class="material-symbols-outlined text-taupe scale-75"
@@ -370,10 +370,28 @@
           >
           
         </nav>
-        <div class="md:hidden">
+        <div class="md:hidden" id="mobile-menu-btn">
           <span class="material-symbols-outlined cursor-pointer">menu</span>
         </div>
       </header>
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-menu" class="fixed inset-0 z-[200] bg-background-light flex-col hidden" aria-hidden="true">
+        <div class="flex items-center justify-between px-8 py-8 border-b border-primary/20">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-taupe scale-75">flare</span>
+            <h2 class="text-sm font-semibold tracking-[0.3em] uppercase">B&amp;K</h2>
+          </div>
+          <button id="close-mobile-menu" aria-label="Close menu">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <nav class="flex flex-col items-center justify-center flex-1 gap-12 text-base uppercase tracking-[0.3em] font-medium text-deep-black/70">
+          <a href="home.html" class="hover:text-deep-black transition-colors border-b border-primary/40 pb-1">Our Story</a>
+          <a href="rsvp.html" class="hover:text-deep-black transition-colors">RSVP</a>
+          <a href="venue.html" class="hover:text-deep-black transition-colors">Venue &amp; Accom</a>
+          <a href="attire.html" class="hover:text-deep-black transition-colors">Attire</a>
+        </nav>
+      </div>
       <!-- Cinematic Center Content -->
       <main
         class="relative z-20 flex-1 flex flex-col items-center justify-center text-center px-6 max-w-5xl"
@@ -460,7 +478,7 @@
       </div>
       <!-- Right: Poetic Narrative Column -->
       <div
-        class="w-full md:w-1/2 silk-texture flex items-center justify-center py-20 px-8 md:px-16 lg:px-24"
+        class="w-full md:w-1/2 silk-texture flex items-center justify-center py-12 md:py-20 px-8 md:px-16 lg:px-24"
       >
         <div class="max-w-xl flex flex-col gap-10">
           <!-- Header Section -->
@@ -567,7 +585,7 @@ src="Assets/IMG_6433.jpg"          />
     <section class="flex flex-col md:flex-row min-h-screen w-full">
         <!-- Left: Poetic Narrative Column -->
       <div
-        class="w-full md:w-1/2 flex items-center justify-center py-20 px-8 md:px-16 lg:px-24"
+        class="w-full md:w-1/2 flex items-center justify-center py-12 md:py-20 px-8 md:px-16 lg:px-24"
       >
         <div class="max-w-xl flex flex-col gap-10">
           <!-- Header Section -->
@@ -608,9 +626,9 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
         </div>
         </div>
       </div>
-      <!-- Rightt: High-Fashion Portrait Column -->
+      <!-- Right: High-Fashion Portrait Column -->
       <div
-        class="w-full md:w-1/2 h-[60vh] md:h-screen sticky top-0 overflow-hidden"
+        class="w-full md:w-1/2 h-[75vh] md:h-screen sticky top-0 overflow-hidden"
       >
         <div
           class="w-full h-full bg-[#f4ece7] flex items-center justify-center p-3 md:p-6"
@@ -842,6 +860,31 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
             clearInterval(timer);
           }
         }, 1000);
+      })();
+    </script>
+    <script>
+      (function () {
+        var menuBtn = document.getElementById("mobile-menu-btn");
+        var mobileMenu = document.getElementById("mobile-menu");
+        var closeBtn = document.getElementById("close-mobile-menu");
+        if (!menuBtn || !mobileMenu || !closeBtn) return;
+        function openMenu() {
+          mobileMenu.classList.remove("hidden");
+          mobileMenu.classList.add("flex");
+          mobileMenu.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        }
+        function closeMenu() {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+          mobileMenu.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+        }
+        menuBtn.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeMenu();
+        });
       })();
     </script>
     <script>
