@@ -94,7 +94,7 @@
   <body class="bg-background-light dark:bg-background-dark font-display">
     <!-- Minimalist Navigation Bar -->
     <header
-      class="relative z-50 w-full px-8 md:px-20 py-8 flex items-center justify-between"
+      class="sticky top-0 z-50 w-full px-8 md:px-20 py-8 flex items-center justify-between bg-background-light/95 backdrop-blur-md border-b border-primary/10"
     >
       <div class="flex items-center gap-2">
         <span class="material-symbols-outlined text-taupe scale-75">flare</span>
@@ -118,10 +118,28 @@
           >Attire</a
         >
       </nav>
-      <div class="md:hidden">
+      <div class="md:hidden" id="mobile-menu-btn">
         <span class="material-symbols-outlined cursor-pointer">menu</span>
       </div>
     </header>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[200] bg-background-light flex-col hidden" aria-hidden="true">
+      <div class="flex items-center justify-between px-8 py-8 border-b border-primary/20">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-taupe scale-75">flare</span>
+          <h2 class="text-sm font-semibold tracking-[0.3em] uppercase">B&amp;K</h2>
+        </div>
+        <button id="close-mobile-menu" aria-label="Close menu">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col items-center justify-center flex-1 gap-12 text-base uppercase tracking-[0.3em] font-medium text-deep-black/70">
+        <a href="home.html" class="hover:text-deep-black transition-colors">Our Story</a>
+        <a href="rsvp.html" class="hover:text-deep-black transition-colors">RSVP</a>
+        <a href="venue.html" class="hover:text-deep-black transition-colors border-b border-primary/40 pb-1">Venue &amp; Accom</a>
+        <a href="attire.html" class="hover:text-deep-black transition-colors">Attire</a>
+      </nav>
+    </div>
     <main class="relative overflow-hidden silk-texture">
       <!-- Hero Section -->
       <section class="relative pt-20 pb-12 px-6">
@@ -336,7 +354,7 @@
               </a>
             </div>
             <div
-              class="lg:w-1/2 h-80 lg:h-auto bg-cover bg-center"
+              class="order-first lg:order-none lg:w-1/2 h-80 lg:h-auto bg-cover bg-center"
               data-alt="Elegant South African estate with proteas and rolling hills"
               style="background-image: url(hotels/kievits.jpg)"
             ></div>
@@ -439,7 +457,7 @@
       <!-- Footer Call to Action -->
       <section class="max-w-7xl mx-auto px-6 py-24 text-center">
         <div
-          class="p-16 rounded-xl bg-slate-900 text-white relative overflow-hidden"
+          class="p-8 md:p-16 rounded-xl bg-slate-900 text-white relative overflow-hidden"
         >
           <div class="absolute inset-0 opacity-20">
             <img
@@ -525,6 +543,31 @@
         </div>
       </div>
     </div>
+    <script>
+      (function () {
+        var menuBtn = document.getElementById("mobile-menu-btn");
+        var mobileMenu = document.getElementById("mobile-menu");
+        var closeBtn = document.getElementById("close-mobile-menu");
+        if (!menuBtn || !mobileMenu || !closeBtn) return;
+        function openMenu() {
+          mobileMenu.classList.remove("hidden");
+          mobileMenu.classList.add("flex");
+          mobileMenu.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        }
+        function closeMenu() {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+          mobileMenu.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+        }
+        menuBtn.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeMenu();
+        });
+      })();
+    </script>
     <script>
       (function () {
         const openBtn = document.getElementById("open-overseers-modal");

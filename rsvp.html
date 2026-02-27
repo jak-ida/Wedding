@@ -90,7 +90,7 @@
   >
     <!-- Minimalist Navigation Bar -->
     <header
-      class="relative z-50 w-full px-8 md:px-20 py-8 flex items-center justify-between"
+      class="sticky top-0 z-50 w-full px-8 md:px-20 py-8 flex items-center justify-between bg-background-light/95 backdrop-blur-md border-b border-primary/10"
     >
       <div class="flex items-center gap-2">
         <span class="material-symbols-outlined text-taupe scale-75">flare</span>
@@ -115,10 +115,28 @@
         >
        
       </nav>
-      <div class="md:hidden">
+      <div class="md:hidden" id="mobile-menu-btn">
         <span class="material-symbols-outlined cursor-pointer">menu</span>
       </div>
     </header>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[200] bg-background-light flex-col hidden" aria-hidden="true">
+      <div class="flex items-center justify-between px-8 py-8 border-b border-primary/20">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-taupe scale-75">flare</span>
+          <h2 class="text-sm font-semibold tracking-[0.3em] uppercase">B&amp;K</h2>
+        </div>
+        <button id="close-mobile-menu" aria-label="Close menu">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col items-center justify-center flex-1 gap-12 text-base uppercase tracking-[0.3em] font-medium text-deep-black/70">
+        <a href="home.html" class="hover:text-deep-black transition-colors">Our Story</a>
+        <a href="rsvp.html" class="hover:text-deep-black transition-colors border-b border-primary/40 pb-1">RSVP</a>
+        <a href="venue.html" class="hover:text-deep-black transition-colors">Venue &amp; Accom</a>
+        <a href="attire.html" class="hover:text-deep-black transition-colors">Attire</a>
+      </nav>
+    </div>
     <main class="pt-20 pb-24">
       <!-- Hero Section -->
       <section class="max-w-4xl mx-auto text-center mb-16">
@@ -140,12 +158,12 @@
       </section>
       <!-- Main RSVP Form -->
       <section
-        class="max-w-screen-xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16"
+        class="max-w-screen-xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16"
       >
         <!-- Form Side -->
         <div class="lg:col-span-7 flex justify-center lg:justify-end">
           <div
-            class="ivory-card w-full max-w-4xl dark:bg-slate-900/50 shadow-2xl rounded-xl p-10 lg:p-16 relative overflow-hidden border border-primary/20"
+            class="ivory-card w-full max-w-4xl dark:bg-slate-900/50 shadow-2xl rounded-xl p-6 sm:p-10 lg:p-16 relative overflow-hidden border border-primary/20"
           >
             <p
               class="text-sm text-slate-500 dark:text-slate-400 italic pb-4 mx-auto text-center"
@@ -519,6 +537,31 @@
         </div>
       </div>
     </div>
+    <script>
+      (function () {
+        var menuBtn = document.getElementById("mobile-menu-btn");
+        var mobileMenu = document.getElementById("mobile-menu");
+        var closeBtn = document.getElementById("close-mobile-menu");
+        if (!menuBtn || !mobileMenu || !closeBtn) return;
+        function openMenu() {
+          mobileMenu.classList.remove("hidden");
+          mobileMenu.classList.add("flex");
+          mobileMenu.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        }
+        function closeMenu() {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+          mobileMenu.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+        }
+        menuBtn.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeMenu();
+        });
+      })();
+    </script>
     <script>
       (function () {
         const openButton = document.getElementById("send-rsvp-btn");
