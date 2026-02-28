@@ -519,12 +519,10 @@
         >
           Your RSVP Has Been Received!
         </h3>
-        <p></p>
-        <p class="text-slate-700 leading-relaxed">
-          <i>Just a Reminder:</i> <br />
-          There is a predetermined guest list.
-          <br />All RSVPs will be responded to by email in accordance with the
-          guest list.
+        <p id="rsvp-success-message" class="text-slate-700 leading-relaxed">
+        </p>
+        <p class="text-slate-600 text-sm mt-4 leading-relaxed">
+          If you need to change your response or any details, please reach out to the overseers (contact details are on the Venue &amp; Accom page).
         </p>
         <div class="mt-8 flex justify-end">
           <button
@@ -574,6 +572,15 @@
         }
 
         function openModal() {
+          var attendance = document.querySelector('input[name="attendance"]:checked');
+          var msgEl = document.getElementById("rsvp-success-message");
+          if (msgEl) {
+            if (attendance && attendance.value === "attending") {
+              msgEl.textContent = "Thank you for joining us — we cannot wait to celebrate with you!";
+            } else {
+              msgEl.textContent = "Thank you for letting us know. We will miss you, and we are so glad you took the time to respond.";
+            }
+          }
           modal.classList.remove("hidden");
           modal.classList.add("flex");
           modal.setAttribute("aria-hidden", "false");
