@@ -690,7 +690,7 @@
     <section class="flex flex-col md:flex-row min-h-screen w-full">
         <!-- Left: Poetic Narrative Column -->
       <div
-        class="w-full md:w-1/2 flex items-center justify-center py-12 md:py-20 px-8 md:px-16 lg:px-24"
+        class="w-full md:w-1/2 flex items-center justify-center py-12 md:py-20 px-8 md:px-16 lg:px-24 md:sticky md:top-0 min-[1001px]:static"
       >
         <div class="max-w-xl flex flex-col gap-10">
           <!-- Header Section -->
@@ -733,14 +733,15 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
       </div>
       <!-- Right: High-Fashion Portrait Column -->
       <div
-        class="w-full md:w-1/2 h-[75vh] md:h-screen sticky top-0 overflow-hidden"
+        class="w-full md:w-1/2 overflow-hidden min-h-0 min-[1001px]:h-screen min-[1001px]:sticky min-[1001px]:top-0"
       >
         <div
           class="w-full h-full bg-[#f4ece7] flex items-center justify-center p-3 md:p-6"
         >
-          <div class="relative w-full h-full">
+          <div class="relative w-full h-full max-[1000px]:flex max-[1000px]:flex-col max-[1000px]:items-stretch max-[1000px]:gap-0">
+            <!-- 1st: slightly left, 80% -->
             <figure
-              class="absolute left-[3%] top-[7%] w-[42.5%] md:w-[34%] rotate-[-10deg] bg-primary p-2 pb-8 shadow-2xl z-20"
+              class="absolute left-[3%] top-[7%] w-[42.5%] rotate-[-10deg] bg-primary p-2 pb-8 shadow-2xl z-20 max-[1000px]:relative max-[1000px]:left-0 max-[1000px]:top-0 max-[1000px]:w-[80%] max-[770px]:w-[60%] max-[500px]:w-[80%] max-[1000px]:self-start max-[770px]:ml-[10%] max-[500px]:ml-0 max-[1000px]:rotate-[-6deg] max-[1000px]:translate-x-0"
             >
               <img
                 class="home-lightbox-trigger cursor-pointer w-full h-44 md:h-60 object-cover object-left"
@@ -750,8 +751,9 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
                 alt="Polaroid proposal one"
               />
             </figure>
+            <!-- 2nd: slightly under 1st, more to the right, 60% (middle of stack) -->
             <figure
-              class="absolute right-[3%] top-[34%] w-[39%] md:w-[31%] rotate-[18deg] bg-primary p-2 pb-8 shadow-2xl z-30"
+              class="absolute right-[3%] top-[34%] w-[39%] rotate-[18deg] bg-primary p-2 pb-8 shadow-2xl z-30 max-[1000px]:relative max-[1000px]:right-0 max-[1000px]:top-0 max-[1000px]:w-[80%] max-[770px]:w-[60%] max-[500px]:w-[80%] max-[1000px]:self-end max-[770px]:mr-[10%] max-[500px]:mr-0 max-[1000px]:-mt-10 max-[1000px]:rotate-[6deg] max-[1000px]:translate-x-0 max-[1000px]:z-10"
             >
               <img
                 class="home-lightbox-trigger cursor-pointer w-full h-44 md:h-[14.5rem] object-cover object-center"
@@ -761,8 +763,9 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
                 alt="Polaroid proposal two"
               />
             </figure>
+            <!-- 3rd: slightly above 2nd, left, 60% (overlaps 2nd) -->
             <figure
-              class="absolute left-[67%] -translate-x-1/2 top-[3%] w-[42.5%] md:w-[42.5%] rotate-[4deg] bg-primary p-2 pb-8 shadow-2xl z-10"
+              class="absolute left-[67%] -translate-x-1/2 top-[3%] w-[42.5%] rotate-[4deg] bg-primary p-2 pb-8 shadow-2xl z-10 max-[1000px]:relative max-[1000px]:left-0 max-[1000px]:top-0 max-[1000px]:w-[80%] max-[770px]:w-[60%] max-[500px]:w-[80%] max-[1000px]:self-start max-[770px]:ml-[10%] max-[500px]:ml-0 max-[1000px]:-mt-10 max-[1000px]:rotate-[-4deg] max-[1000px]:translate-x-0 max-[1000px]:z-20"
             >
               <img
                 class="home-lightbox-trigger cursor-pointer w-full h-40 md:h-[13.5rem] object-cover object-center"
@@ -772,8 +775,9 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
                 alt="Polaroid proposal top"
               />
             </figure>
+            <!-- 4th: right, 60% (middle of second stack) -->
             <figure
-              class="absolute left-[50%] -translate-x-1/2 bottom-[6%] w-[54%] md:w-[53%] rotate-[-4deg] bg-primary p-2 pb-8 shadow-2xl z-20"
+              class="absolute left-[50%] -translate-x-1/2 bottom-[6%] w-[54%] rotate-[-4deg] bg-primary p-2 pb-8 shadow-2xl z-20 max-[1000px]:relative max-[1000px]:left-0 max-[1000px]:right-0 max-[1000px]:bottom-0 max-[1000px]:top-0 max-[1000px]:w-[80%] max-[770px]:w-[60%] max-[500px]:w-[80%] max-[1000px]:self-end max-[770px]:mr-[10%] max-[500px]:mr-0 max-[1000px]:-mt-10 max-[1000px]:rotate-[4deg] max-[1000px]:translate-x-0 max-[1000px]:z-10"
             >
               <img
                 class="home-lightbox-trigger cursor-pointer w-full h-48 md:h-[16.5rem] object-cover object-right"
@@ -783,8 +787,9 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
                 alt="Polaroid proposal three"
               />
             </figure>
+            <!-- 5th: slightly above 4th, left, 60% (overlaps 4th) -->
             <figure
-              class="absolute left-[4%] bottom-[25%] w-[38%] md:w-[28%] rotate-[-17deg] bg-primary p-2 pb-8 shadow-2xl z-30"
+              class="absolute left-[4%] bottom-[25%] w-[38%] rotate-[-17deg] bg-primary p-2 pb-8 shadow-2xl z-30 max-[1000px]:relative max-[1000px]:left-0 max-[1000px]:bottom-0 max-[1000px]:top-0 max-[1000px]:w-[80%] max-[770px]:w-[60%] max-[500px]:w-[80%] max-[1000px]:self-start max-[770px]:ml-[10%] max-[500px]:ml-0 max-[1000px]:-mt-10 max-[1000px]:rotate-[-8deg] max-[1000px]:translate-x-0 max-[1000px]:z-20"
             >
               <img
                 class="home-lightbox-trigger cursor-pointer w-full h-36 md:h-48 object-cover object-center"
