@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Babo &amp; Keagile | A Cinematic Opening</title>
+    <title>Keagile &amp; Babo | A Cinematic Opening</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap"
@@ -37,6 +37,8 @@
               "deep-black": "#111111",
               champagne: "#e8d8b8",
               taupe: "#81796a",
+              pink: "#ebceca",
+              heavyPink: "#edabad",
             },
             fontFamily: {
               display: ["Newsreader", "serif"],
@@ -288,12 +290,13 @@
                 <button
                   id="open-moodboard-modal"
                   type="button"
-                  class="flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs border-b border-primary/50 pb-1 hover:text-white transition-colors"
+                  class="group relative inline-flex items-center justify-center gap-2 px-10 py-4 bg-pink text-deep-black text-xs font-bold uppercase tracking-[0.2em] rounded-none transition-all duration-300 hover:bg-taupe hover:text-white border border-taupe/30"
                 >
-                  <span class="material-symbols-outlined text-base"
-                    >grid_view</span
-                  >
-                  View Full Moodboard
+                  <span class="relative z-10 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base">grid_view</span>
+                    View Full Moodboard
+                  </span>
+                  <div class="absolute inset-0 border border-taupe translate-x-1 translate-y-1 opacity-50 hover:border-champagne group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-300"></div>
                 </button>
               </div>
             </div>
@@ -411,7 +414,7 @@
             <button
               id="close-moodboard-modal"
               type="button"
-              class="absolute top-4 right-4 text-xs tracking-[0.2em] uppercase text-slate-500 hover:text-slate-900 dark:hover:text-white"
+              class="type-button absolute top-4 right-4 bg-primary text-background-dark px-6 py-2 rounded-full hover:scale-105 transition-transform text-xs font-bold uppercase tracking-[0.2em]"
             >
               Close
             </button>

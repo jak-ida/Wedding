@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Babo &amp; Keagile | A Cinematic Opening</title>
+    <title>Keagile &amp; Babo | A Cinematic Opening</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap"
@@ -37,6 +37,8 @@
               "deep-black": "#111111",
               champagne: "#e8d8b8",
               taupe: "#81796a",
+                  pink: "#ebceca",
+              heavyPink: "#edabad"
             },
             fontFamily: {
               display: ["Newsreader", "serif"],
@@ -304,15 +306,17 @@
                 </div>
               </div>
               <a
-                class="type-button inline-flex items-center justify-center gap-2 bg-primary text-bronze py-3 px-8 rounded-lg hover:bg-primary/90 transition-all w-full md:w-max shadow-sm"
+                class="group relative inline-flex items-center justify-center gap-2 px-10 py-4 bg-pink text-deep-black text-xs font-bold uppercase tracking-[0.2em] rounded-none transition-all duration-300 hover:bg-taupe hover:text-white border border-taupe/30 w-full md:w-max"
                 data-location="Franschhoek, South Africa"
                 target="_blank"
+                rel="noopener"
                 href="https://www.booking.com/hotel/za/protea-capital.en-gb.html?aid=318615&label=New_English_EN_ALL-GBIECAUS_5226333385-zrfE0CU6K_HWeoloJw*PrQS640874751349%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=d6514278b020260f0ae5c2c1b335b533&dest_id=-1273769&dest_type=city&dist=0&group_adults=1&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=1&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1771771679&srpvid=ce98615ba5a60161&type=total&ucfs=1&checkin=&checkout="
               >
-                <span class="material-symbols-outlined text-sm"
-                  >directions</span
-                >
-                Book Now
+                <span class="relative z-10 flex items-center gap-2">
+                  <span class="material-symbols-outlined text-sm">directions</span>
+                  Book Now
+                </span>
+                <div class="absolute inset-0 border border-taupe translate-x-1 translate-y-1 opacity-50 hover:border-champagne group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-300"></div>
               </a>
             </div>
           </div>
@@ -345,15 +349,17 @@
                 </div>
               </div>
               <a
-                class="type-button inline-flex items-center justify-center gap-2 bg-primary text-bronze py-3 px-8 rounded-lg hover:bg-primary/90 transition-all w-full md:w-max shadow-sm"
+                class="group relative inline-flex items-center justify-center gap-2 px-10 py-4 bg-pink text-deep-black text-xs font-bold uppercase tracking-[0.2em] rounded-none transition-all duration-300 hover:bg-taupe hover:text-white border border-taupe/30 w-full md:w-max"
                 data-location="Franschhoek, South Africa"
                 target="_blank"
+                rel="noopener"
                 href="https://www.booking.com/hotel/za/kievits-kroon-country-estate.en-gb.html?aid=356980&label=gog235jc-10CAso-wFCHGtpZXZpdHMta3Jvb24tY291bnRyeS1lc3RhdGVIM1gDaCSIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqyT7MwGwAIB0gIkNjRiNTJhMjUtOGY3Ny00NWIyLWI4YzgtODdlMmFhMTNkYzYx2AIB4AIB&sid=d6514278b020260f0ae5c2c1b335b533&dist=0&keep_landing=1&sb_price_type=total&type=total&chal_t=1771768237150&force_referer=https%3A%2F%2Fwww.google.com%2F"
               >
-                <span class="material-symbols-outlined text-sm"
-                  >directions</span
-                >
-                Book Now
+                <span class="relative z-10 flex items-center gap-2">
+                  <span class="material-symbols-outlined text-sm">directions</span>
+                  Book Now
+                </span>
+                <div class="absolute inset-0 border border-taupe translate-x-1 translate-y-1 opacity-50 hover:border-champagne group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-300"></div>
               </a>
             </div>
             <div
@@ -484,9 +490,11 @@
             </p>
             <button
               id="open-overseers-modal"
-              class="type-button bg-primary text-background-dark px-10 py-4 rounded-full hover:scale-105 transition-transform"
+              type="button"
+              class="group relative inline-flex items-center justify-center px-10 py-4 bg-pink text-deep-black text-xs font-bold uppercase tracking-[0.2em] rounded-none transition-all duration-300 hover:bg-taupe hover:text-white border border-taupe/30"
             >
-              Contact overseers
+              <span class="relative z-10">Contact overseers</span>
+              <div class="absolute inset-0 border border-taupe translate-x-1 translate-y-1 opacity-50 hover:border-champagne group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-300"></div>
             </button>
           </div>
         </div>
@@ -518,8 +526,8 @@
             <h4 class="type-card-title text-lg text-slate-900">Bose Njabulo</h4>
             <p class="type-body italic mb-4">Maid of Honor/Bride's Sister</p>
             <div class="space-y-2 text-sm text-slate-600 type-meta">
-              <p>Phone: +27 XX XXX XXXX</p>
-              <p>Email: bose@example.com</p>
+              <p>Phone: <a href="tel:+26775547296" class="text-taupe hover:underline">+267 75 547 296</a></p>
+              <p>Email: <a href="mailto:bosencube@gmail.com" class="text-taupe hover:underline">bosencube@gmail.com</a></p>
             </div>
           </div>
           <div class="relative pl-0 md:pl-10">
@@ -531,8 +539,8 @@
             </h4>
             <p class="type-body italic mb-4">Best Man/Groom's Brother</p>
             <div class="space-y-2 text-sm text-slate-600 type-meta">
-              <p>Phone: +27 XX XXX XXXX</p>
-              <p>Email: lekgotla@example.com</p>
+              <p>Phone: <a href="tel:+26775076420" class="text-taupe hover:underline">+267 75 076 420</a></p>
+              <p>Email: <a href="mailto:lesolle777@gmail.com" class="text-taupe hover:underline">lesolle777@gmail.com</a></p>
             </div>
           </div>
         </div>
@@ -540,9 +548,10 @@
           <button
             id="close-overseers-modal"
             type="button"
-            class="type-button bg-primary text-background-dark px-8 py-3 rounded-full hover:scale-105 transition-transform"
+            class="group relative inline-flex items-center justify-center px-8 py-3 bg-pink text-deep-black text-xs font-bold uppercase tracking-[0.2em] rounded-none transition-all duration-300 hover:bg-taupe hover:text-white border border-taupe/30"
           >
-            Close
+            <span class="relative z-10">Close</span>
+            <div class="absolute inset-0 border border-taupe translate-x-1 translate-y-1 opacity-50 hover:border-champagne group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-300"></div>
           </button>
         </div>
       </div>
