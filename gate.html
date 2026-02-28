@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Babo &amp; Keagile | A Wondrous Union</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#e7d7b6",
+              "background-light": "#f8f6f2",
+              "background-dark": "#111111",
+              "deep-black": "#111111",
+              champagne: "#e8d8b8",
+              taupe: "#81796a",
+              pink: "#ebceca",
+            },
+            fontFamily: { display: ["Newsreader", "serif"] },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+    <style>
+      body { font-family: "Newsreader", serif; }
+      .great-vibes-regular { font-family: "Great Vibes", cursive; font-weight: 400; font-style: normal; }
+      .prelude-locked { overflow: hidden; }
+      .prelude-overlay {
+        position: fixed; inset: 0; z-index: 9999; opacity: 1;
+        transition: opacity 500ms ease; overflow: hidden;
+      }
+      .prelude-stage {
+        position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+        background: radial-gradient(circle at center, #f8f3ee 0%, #e9dfd1 64%, #e1d5c5 100%);
+        overflow: visible; transition: background 650ms ease;
+      }
+      .prelude-stage::before {
+        content: ""; position: absolute; inset: -8%;
+        background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.46) 0, transparent 36%),
+          radial-gradient(circle at 80% 68%, rgba(255,255,255,0.34) 0, transparent 34%),
+          repeating-linear-gradient(45deg, rgba(191,156,114,0.18) 0 2px, transparent 2px 20px),
+          repeating-linear-gradient(-45deg, rgba(191,156,114,0.14) 0 2px, transparent 2px 20px);
+        opacity: 0.9; pointer-events: none; transition: opacity 550ms ease;
+      }
+      .prelude-stage::after {
+        content: ""; position: absolute; inset: 0;
+        background: radial-gradient(circle at 50% 50%, transparent 0 40%, rgba(109,78,50,0.11) 100%),
+          linear-gradient(to bottom, rgba(255,255,255,0.28), rgba(228,210,186,0.22));
+        pointer-events: none; transition: opacity 550ms ease;
+      }
+      .prelude-envelope {
+        position: relative; width: 100vw; height: 100vh; perspective: 1000px; transform-style: preserve-3d;
+        transition: width 950ms cubic-bezier(0.22,0.7,0.2,1), height 950ms cubic-bezier(0.22,0.7,0.2,1), border-radius 850ms ease, box-shadow 850ms ease;
+      }
+      @media (min-width: 1024px) {
+        .prelude-envelope { width: 80vw; height: 75vh; }
+      }
+      .prelude-envelope-drop-back, .prelude-envelope-drop-front, .prelude-envelope-drop-flap {
+        position: absolute; inset: 0; transition: transform 1400ms cubic-bezier(0.25,0.46,0.45,0.94);
+      }
+      .prelude-envelope-drop-back { z-index: 0; }
+      body.prelude-dropping .prelude-envelope-drop-back,
+      body.prelude-dropping .prelude-envelope-drop-front,
+      body.prelude-dropping .prelude-envelope-drop-flap { transform: translateY(65vh); }
+      .prelude-envelope-drop-front { z-index: 3; pointer-events: none; }
+      .prelude-envelope-drop-flap { z-index: 4; pointer-events: none; }
+      .prelude-envelope-drop-flap .prelude-envelope-flap { pointer-events: auto; }
+      body.prelude-open .prelude-envelope-drop-flap { z-index: 0; }
+      .prelude-envelope-body {
+        position: absolute; inset: 0; border-radius: 0 0 10px 10px;
+        background: linear-gradient(180deg, #d4c9ba 0%, #d0c4b5 100%); box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+      }
+      .prelude-envelope-left, .prelude-envelope-right {
+        position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 3; pointer-events: none;
+      }
+      .prelude-envelope-left::before, .prelude-envelope-right::before {
+        content: ""; position: absolute; left: 0; right: 0; top: 0; bottom: 0; border-radius: 0 0 10px 10px;
+      }
+      .prelude-envelope-left::before {
+        clip-path: polygon(0 0, 100% 100%, 0 100%);
+        background: linear-gradient(165deg, #d0c4b5 0%, #c6b8a6 100%); box-shadow: inset 1px 0 0 rgba(0,0,0,0.22);
+      }
+      .prelude-envelope-right::before {
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+        background: linear-gradient(195deg, #d4c9ba 0%, #c8baa8 100%); box-shadow: inset -1px 0 0 rgba(0,0,0,0.22);
+      }
+      .prelude-envelope-flap {
+        position: absolute; left: 0; right: 0; top: 0; height: 50%;
+        transform-origin: top center; transform: rotateX(0deg);
+        transition: transform 1200ms cubic-bezier(0.22,0.7,0.2,1); z-index: 4;
+      }
+      .prelude-envelope-flap::before {
+        content: ""; position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        background: linear-gradient(175deg, #e2d9cb 0%, #d4c9ba 100%); box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        pointer-events: none;
+      }
+      body.prelude-open .prelude-envelope-flap { transform: rotateX(-180deg); }
+      /* Card: phone 1038Ã—2108, tablet 722Ã—645; desktop keeps cover fill */
+      .prelude-preview {
+        position: absolute; left: 10%; right: 10%; bottom: 5%; height: 72%; border-radius: 8px;
+        background: #f4ece7 center / cover no-repeat;
+        background-image: url("Assets/hero_section_mobile.jpg");
+        border: 1px solid rgba(0,0,0,0.12); box-shadow: 0 12px 32px rgba(0,0,0,0.2); z-index: 1;
+        opacity: 0; transform: translateY(0) scale(0.95);
+        transition: opacity 500ms ease 400ms, transform 800ms cubic-bezier(0.22,0.7,0.2,1) 400ms;
+      }
+      @media (max-width: 450px) {
+        .prelude-preview {
+          left: 50%; top: 50%;
+          margin-left: 0; margin-top: 0;
+          width: auto; height: min(72vh, calc(90vw * 2108 / 1038));
+          aspect-ratio: 1038 / 2108;
+          transform: translate(-50%, -50%) scale(0.95);
+          background-image: url("Assets/hero_section_mobile.jpg");
+          background-size: contain;
+          background-position: center;
+        }
+        body.prelude-open .prelude-preview {
+          transform: translate(-50%, calc(-50% - 50px)) scale(1);
+        }
+      }
+      @media (min-width: 451px) and (max-width: 1023px) {
+        .prelude-preview {
+          left: 50%; top: 50%;
+          margin-left: 0; margin-top: 0;
+          width: min(90vw, calc(72vh * 722 / 645));
+          height: auto;
+          aspect-ratio: 722 / 645;
+          transform: translate(-50%, -50%) scale(0.95);
+          background-image: url("Assets/hero_section_tablet.png");
+          background-size: contain;
+          background-position: center;
+        }
+        body.prelude-open .prelude-preview {
+          transform: translate(-50%, calc(-50% - 50px)) scale(1);
+        }
+      }
+      @media (min-width: 1024px) {
+        .prelude-preview {
+          left: 10%; right: 10%; bottom: 5%; top: auto; height: 72%;
+          margin-left: 0; margin-top: 0;
+          width: auto; aspect-ratio: unset;
+          transform: translateY(0) scale(0.95);
+          background-size: cover;
+          background-image: url("Assets/hero_section.png");
+        }
+        body.prelude-open .prelude-preview {
+          transform: translateY(-100px) scale(1);
+        }
+      }
+      body.prelude-open .prelude-preview {
+        opacity: 1;
+        transition: opacity 500ms ease 300ms, transform 1000ms cubic-bezier(0.22,0.7,0.2,1) 300ms;
+      }
+      .prelude-wax-seal-wrap {
+        position: absolute; bottom: 0; left: 50%; width: 28vmin; height: 28vmin; margin-left: -14vmin;
+        transform: translateY(50%); z-index: 5; pointer-events: none;
+      }
+      .prelude-wax-seal-wrap .prelude-wax-seal { pointer-events: auto; }
+      .prelude-wax-blobs { position: absolute; top: 0; right: 0; bottom: 0; left: 0; filter: url(#goo); z-index: 0; }
+      .prelude-wax-blob {
+        position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 20vmin; height: 20vmin;
+        border-radius: 50%; background-color: #861C0E;
+        box-shadow: inset 0 0 1px rgba(0,0,0,0.4), inset -1px -1px 3px rgba(255,255,255,0.25);
+        backface-visibility: hidden;
+      }
+      .prelude-wax-blob:nth-child(1) { transform: scale(0.8) translate(-2.5vmin, -2.86vmin); }
+      .prelude-wax-blob:nth-child(2) { transform: scale(0.9) translate(2vmin, -1.25vmin); }
+      .prelude-wax-blob:nth-child(3) { transform: scale(0.7) translate(3.33vmin, 5vmin); }
+      .prelude-wax-blob:nth-child(4) { transform: scale(0.7) translate(-5vmin, 2vmin); }
+      .prelude-wax-seal {
+        position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 16vmin; height: 16vmin;
+        line-height: 16vmin; border-radius: 50%; background-color: #6e1809;
+        box-shadow: 0 0 3px rgba(0,0,0,0.5), 0 0 6px rgba(0,0,0,0.3), inset 0 0 1px rgba(0,0,0,0.8), inset -1px -1px 3px rgba(255,255,255,0.3);
+        filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); display: flex; align-items: center; justify-content: center;
+        cursor: pointer; z-index: 1; border: 0; padding: 0; font-family: "Rock Salt", cursive; font-size: 4vmin;
+        color: rgba(0,0,0,0.6); text-shadow: 0 1px 1px rgba(255,255,255,0.2); transition: opacity 250ms ease, transform 200ms ease;
+      }
+      .prelude-wax-seal:focus {
+        outline: none; box-shadow: 0 0 3px rgba(0,0,0,0.5), 0 0 6px rgba(0,0,0,0.3), inset 0 0 1px rgba(0,0,0,0.8), inset -1px -1px 3px rgba(255,255,255,0.3), 0 0 0 3px rgba(255,255,255,0.4);
+      }
+      body.prelude-expanding .prelude-preview {
+        left: 0; right: 0; top: 0; bottom: 0; width: 100%; height: 100%; margin-left: 0; margin-top: 0;
+        border-radius: 0; box-shadow: none; aspect-ratio: unset;
+        transform: translate(0, 0) scale(1);
+        background-size: cover;
+        transition: left 900ms cubic-bezier(0.22,0.7,0.2,1), right 900ms cubic-bezier(0.22,0.7,0.2,1), top 900ms cubic-bezier(0.22,0.7,0.2,1), bottom 900ms cubic-bezier(0.22,0.7,0.2,1), transform 900ms cubic-bezier(0.22,0.7,0.2,1), width 900ms cubic-bezier(0.22,0.7,0.2,1), height 900ms cubic-bezier(0.22,0.7,0.2,1), border-radius 900ms ease, box-shadow 900ms ease;
+      }
+      body.prelude-expanding .prelude-envelope { width: 100vw; height: 100vh; border-radius: 0; }
+      body.prelude-expanding .prelude-envelope-drop-back,
+      body.prelude-expanding .prelude-envelope-drop-front,
+      body.prelude-expanding .prelude-envelope-drop-flap { pointer-events: none; visibility: hidden; }
+      body.prelude-expanding .prelude-envelope-flap,
+      body.prelude-expanding .prelude-envelope-left,
+      body.prelude-expanding .prelude-envelope-right { opacity: 0; pointer-events: none; transition: opacity 400ms ease; }
+      body.prelude-expanding .prelude-preview { z-index: 10; }
+      /* After envelope opens: show guest-check modal, fade envelope */
+      body.prelude-show-gate .prelude-stage { opacity: 0; pointer-events: none; transition: opacity 600ms ease; }
+      .guest-check-modal {
+        position: absolute; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center;
+        padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 500ms ease;
+      }
+      body.prelude-show-gate .guest-check-modal { opacity: 1; pointer-events: auto; }
+      .guest-check-glass {
+        background: rgba(248, 246, 242, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(17, 17, 17, 0.08); border-radius: 12px; box-shadow: 0 24px 48px rgba(0,0,0,0.12);
+        max-width: 420px; width: 100%; padding: 2rem 1.75rem; max-height: 90vh; overflow-y: auto;
+      }
+      .gate-spinner {
+        display: inline-block;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 2px solid rgba(231, 215, 182, 0.4);
+        border-top-color: currentColor;
+        border-radius: 50%;
+        animation: gate-spin 0.7s linear infinite;
+      }
+      @keyframes gate-spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body class="prelude-locked bg-background-light text-deep-black antialiased overflow-x-hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position:absolute;width:0;height:0;">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+    <div id="prelude-overlay" class="prelude-overlay">
+      <div class="prelude-stage">
+        <div class="prelude-envelope" id="prelude-envelope">
+          <div class="prelude-envelope-drop-back">
+            <div class="prelude-envelope-body" aria-hidden="true"></div>
+          </div>
+          <div class="prelude-preview" role="img" aria-label="Wedding invitation"></div>
+          <div class="prelude-envelope-drop-front">
+            <div class="prelude-envelope-left" aria-hidden="true"></div>
+            <div class="prelude-envelope-right" aria-hidden="true"></div>
+          </div>
+          <div class="prelude-envelope-drop-flap">
+            <div class="prelude-envelope-flap" aria-hidden="true">
+              <div class="prelude-wax-seal-wrap">
+                <div class="prelude-wax-blobs">
+                  <span class="prelude-wax-blob" aria-hidden="true"></span>
+                  <span class="prelude-wax-blob" aria-hidden="true"></span>
+                  <span class="prelude-wax-blob" aria-hidden="true"></span>
+                  <span class="prelude-wax-blob" aria-hidden="true"></span>
+                </div>
+                <button id="prelude-open-btn" class="prelude-wax-seal" type="button" aria-label="Open envelope">B&amp;K</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Guest check modal: shown after envelope opens -->
+      <div id="guest-check-modal" class="guest-check-modal" aria-hidden="true">
+        <div class="guest-check-glass">
+          <p class="text-center text-xs uppercase tracking-[0.3em] text-deep-black/70 mb-2">You&rsquo;re invited</p>
+          <h2 class="great-vibes-regular text-3xl md:text-4xl text-center text-deep-black mb-4">Babo &amp; Keagile</h2>
+          <p class="text-sm text-deep-black/80 text-center mb-6 leading-relaxed">
+            The couple would love for you to keep the links to this site to yourself and not share them with others.
+          </p>
+          <form id="guest-check-form" class="flex flex-col gap-4">
+            <div>
+              <label for="gate-first-name" class="block text-xs uppercase tracking-wider text-deep-black/70 mb-1">First name</label>
+              <input type="text" id="gate-first-name" name="first_name" required autocomplete="given-name"
+                class="w-full px-3 py-2 border border-deep-black/15 rounded bg-white/80 text-deep-black focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none" />
+            </div>
+            <div>
+              <label for="gate-last-name" class="block text-xs uppercase tracking-wider text-deep-black/70 mb-1">Surname</label>
+              <input type="text" id="gate-last-name" name="last_name" required autocomplete="family-name"
+                class="w-full px-3 py-2 border border-deep-black/15 rounded bg-white/80 text-deep-black focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none" />
+            </div>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="gate-cookie-consent" name="cookie_consent" value="1" required
+                class="mt-1 h-4 w-4 rounded border-deep-black/20 text-deep-black focus:ring-primary" />
+              <label for="gate-cookie-consent" class="text-sm text-deep-black/85 leading-snug">
+                I accept the use of cookies necessary for this site to function (for example, to keep you signed in). This site uses only essential cookies. <a href="cookie-policy.html" class="underline hover:text-taupe transition-colors" target="_blank" rel="noopener">Cookie Policy</a>
+              </label>
+            </div>
+            <div id="gate-error" class="text-sm text-red-700 hidden" role="alert"></div>
+            <button type="submit" id="gate-submit" class="w-full py-3 px-4 bg-deep-black text-primary text-xs font-bold uppercase tracking-[0.2em] rounded transition-opacity hover:opacity-90 disabled:opacity-50 flex items-center justify-center gap-2">
+              <span id="gate-submit-text">Continue</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var body = document.body;
+        var overlay = document.getElementById("prelude-overlay");
+        var openBtn = document.getElementById("prelude-open-btn");
+        var guestModal = document.getElementById("guest-check-modal");
+        var form = document.getElementById("guest-check-form");
+        var gateError = document.getElementById("gate-error");
+        var gateSubmit = document.getElementById("gate-submit");
+
+        if (!body || !overlay || !openBtn || !guestModal || !form) return;
+
+        var started = false;
+        function showGuestGate() {
+          body.classList.add("prelude-show-gate");
+          if (guestModal) guestModal.setAttribute("aria-hidden", "false");
+        }
+
+        openBtn.addEventListener("click", function () {
+          if (started) return;
+          started = true;
+          body.classList.add("prelude-open");
+          setTimeout(function () { body.classList.add("prelude-dropping"); }, 1300);
+          setTimeout(function () { body.classList.add("prelude-expanding"); }, 2800);
+          setTimeout(showGuestGate, 3800);
+        });
+        openBtn.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openBtn.click(); }
+        });
+
+        function setButtonLoading(loading) {
+          if (!gateSubmit) return;
+          if (loading) {
+            gateSubmit.disabled = true;
+            gateSubmit.innerHTML = '<span class="gate-spinner" aria-hidden="true"></span>';
+          } else {
+            gateSubmit.disabled = false;
+            gateSubmit.innerHTML = '<span id="gate-submit-text">Continue</span>';
+          }
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var consentCheck = document.getElementById("gate-cookie-consent");
+          if (!consentCheck || !consentCheck.checked) {
+            if (gateError) {
+              gateError.textContent = "Please accept the use of cookies to continue.";
+              gateError.classList.remove("hidden");
+            }
+            return;
+          }
+          if (gateError) { gateError.classList.add("hidden"); gateError.textContent = ""; }
+          setButtonLoading(true);
+          setTimeout(function () { window.location.href = "home.html"; }, 600);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -407,7 +407,7 @@
     </style>
   </head>
   <body
-    class="prelude-locked bg-background-light dark:bg-background-dark text-deep-black dark:text-slate-100 antialiased overflow-x-hidden"
+    class="bg-background-light dark:bg-background-dark text-deep-black dark:text-slate-100 antialiased overflow-x-hidden"
   >
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position:absolute;width:0;height:0;">
       <defs>
@@ -418,49 +418,21 @@
         </filter>
       </defs>
     </svg>
-    <div id="prelude-overlay" class="prelude-overlay" aria-hidden="true">
-      <div class="prelude-stage">
-        <div class="prelude-envelope" id="prelude-envelope">
-          <div class="prelude-envelope-drop-back">
-            <div class="prelude-envelope-body" aria-hidden="true"></div>
-          </div>
-          <div class="prelude-preview" role="img" aria-label="Wedding invitation"></div>
-          <div class="prelude-envelope-drop-front">
-            <div class="prelude-envelope-left" aria-hidden="true"></div>
-            <div class="prelude-envelope-right" aria-hidden="true"></div>
-          </div>
-          <div class="prelude-envelope-drop-flap">
-            <div class="prelude-envelope-flap" aria-hidden="true">
-              <div class="prelude-wax-seal-wrap">
-                <div class="prelude-wax-blobs">
-                  <span class="prelude-wax-blob" aria-hidden="true"></span>
-                  <span class="prelude-wax-blob" aria-hidden="true"></span>
-                  <span class="prelude-wax-blob" aria-hidden="true"></span>
-                  <span class="prelude-wax-blob" aria-hidden="true"></span>
-                </div>
-                <button id="prelude-open-btn" class="prelude-wax-seal" type="button" aria-label="Open envelope">
-                  B&amp;K
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- Main Hero Container -->
     <div
       id="hero-section"
       class="relative min-h-screen w-full flex flex-col items-center"
     >
-      <!-- Background Layer with Calm Ocean Waves (no overlay - blue shows through) -->
+      <!-- Background Layer with Calm Ocean Waves -->
       <div class="absolute inset-0 z-0 overflow-hidden">
-        <div class="absolute inset-0 z-10 " aria-hidden="true"></div>
         <video
           id="hero-video"
           autoplay
           muted
           loop
           playsinline
+          preload="metadata"
+          poster="Assets/poster_image.png"
           class="absolute inset-0 w-full h-full object-cover scale-105"
           aria-label="Calm blue ocean waves wedding background"
           src="Assets/Hero_video_ocean_3.mp4"
@@ -590,11 +562,14 @@
         class="w-full md:w-1/2 h-[60vh] md:h-screen sticky top-0 overflow-hidden"
       >
         <div
-          class="w-full h-full bg-center bg-no-repeat bg-cover transform scale-105"
+          class="home-lightbox-trigger cursor-pointer w-full h-full bg-center bg-no-repeat bg-cover transform scale-105"
           data-alt="Editorial high-fashion wedding portrait of couple in elegant attire"
+          data-lightbox-src="Assets/graduation.png"
           style="
             background-image: url(Assets/graduation.png);
           "
+          role="img"
+          aria-label="Click to view full size"
         >
           <!-- Overlay for cinematic depth -->
           <div class="absolute inset-0 bg-transparent"></div>
@@ -651,10 +626,13 @@
           class="aspect-[3/4] md:aspect-auto md:h-screen md:sticky md:top-0 overflow-hidden rounded-lg group relative"
         >
           <img
-            class="w-full h-full object-cover transition-all duration-700"
+            class="home-lightbox-trigger cursor-pointer w-full h-full object-cover transition-all duration-700"
             data-alt="Black and white close up of wedding rings and silk fabric"
             loading="lazy"
-src="Assets/IMG_6433.jpg"          />
+            decoding="async"
+            src="Assets/IMG_6433.jpg"
+            alt="Black and white close up of wedding rings and silk fabric"
+          />
           
         </div>
         <div
@@ -697,10 +675,12 @@ src="Assets/IMG_6433.jpg"          />
           class="aspect-[3/4] md:aspect-auto md:h-screen md:sticky md:top-0 overflow-hidden rounded-lg group relative"
         >
           <img
-            class="w-full h-full object-cover transition-all duration-700"
+            class="home-lightbox-trigger cursor-pointer w-full h-full object-cover transition-all duration-700"
             data-alt="Elegant bride in a silk gown"
             loading="lazy"
+            decoding="async"
             src="Assets/IMG_0971.JPG"
+            alt="Elegant bride in a silk gown"
           />
         </div>
       </div>
@@ -759,41 +739,45 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
         >
           <div class="relative w-full h-full">
             <figure
-              class="absolute left-[3%] top-[7%] w-[50%] md:w-[40%] rotate-[-10deg] bg-primary p-2 pb-8 shadow-2xl z-20"
+              class="absolute left-[3%] top-[7%] w-[42.5%] md:w-[34%] rotate-[-10deg] bg-primary p-2 pb-8 shadow-2xl z-20"
             >
               <img
-                class="w-full h-44 md:h-60 object-cover object-left"
+                class="home-lightbox-trigger cursor-pointer w-full h-44 md:h-60 object-cover object-left"
                 loading="lazy"
+                decoding="async"
                 src="Assets/proposal1.JPG"
                 alt="Polaroid proposal one"
               />
             </figure>
             <figure
-              class="absolute right-[3%] top-[34%] w-[46%] md:w-[36%] rotate-[18deg] bg-primary p-2 pb-8 shadow-2xl z-30"
+              class="absolute right-[3%] top-[34%] w-[39%] md:w-[31%] rotate-[18deg] bg-primary p-2 pb-8 shadow-2xl z-30"
             >
               <img
-                class="w-full h-44 md:h-[14.5rem] object-cover object-center"
+                class="home-lightbox-trigger cursor-pointer w-full h-44 md:h-[14.5rem] object-cover object-center"
                 loading="lazy"
+                decoding="async"
                 src="Assets/proposal7.JPG"
                 alt="Polaroid proposal two"
               />
             </figure>
             <figure
-              class="absolute left-[67%] -translate-x-1/2 top-[3%] w-[50%] md:w-[50%] rotate-[4deg] bg-primary p-2 pb-8 shadow-2xl z-10"
+              class="absolute left-[67%] -translate-x-1/2 top-[3%] w-[42.5%] md:w-[42.5%] rotate-[4deg] bg-primary p-2 pb-8 shadow-2xl z-10"
             >
               <img
-                class="w-full h-40 md:h-[13.5rem] object-cover object-center"
+                class="home-lightbox-trigger cursor-pointer w-full h-40 md:h-[13.5rem] object-cover object-center"
                 loading="lazy"
+                decoding="async"
                 src="Assets/proposal5.JPG"
                 alt="Polaroid proposal top"
               />
             </figure>
             <figure
-              class="absolute left-[50%] -translate-x-1/2 bottom-[6%] w-[64%] md:w-[62%] rotate-[-4deg] bg-primary p-2 pb-8 shadow-2xl z-20"
+              class="absolute left-[50%] -translate-x-1/2 bottom-[6%] w-[54%] md:w-[53%] rotate-[-4deg] bg-primary p-2 pb-8 shadow-2xl z-20"
             >
               <img
-                class="w-full h-48 md:h-[16.5rem] object-cover object-right"
+                class="home-lightbox-trigger cursor-pointer w-full h-48 md:h-[16.5rem] object-cover object-right"
                 loading="lazy"
+                decoding="async"
                 src="Assets/proposal2.JPG"
                 alt="Polaroid proposal three"
               />
@@ -802,8 +786,9 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
               class="absolute left-[4%] bottom-[25%] w-[38%] md:w-[28%] rotate-[-17deg] bg-primary p-2 pb-8 shadow-2xl z-30"
             >
               <img
-                class="w-full h-36 md:h-48 object-cover object-center"
+                class="home-lightbox-trigger cursor-pointer w-full h-36 md:h-48 object-cover object-center"
                 loading="lazy"
+                decoding="async"
                 src="Assets/proposal6.JPG"
                 alt="Polaroid proposal four"
               />
@@ -936,6 +921,30 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
           </div>
       
     </div>
+    <!-- Full-screen image lightbox (same as attire) -->
+    <div
+      id="image-lightbox"
+      class="fixed inset-0 z-[200] hidden items-center justify-center bg-black/90 p-4"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="View image full size"
+    >
+      <button
+        type="button"
+        id="image-lightbox-close"
+        class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+        aria-label="Close"
+      >
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <img
+        id="image-lightbox-img"
+        src=""
+        alt="Full size view"
+        class="max-w-full max-h-full object-contain"
+      />
+    </div>
     <script>
       (function () {
         const dayEl = document.getElementById("countdown-days");
@@ -1013,90 +1022,6 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
     </script>
     <script>
       (function () {
-        const body = document.body;
-        const overlay = document.getElementById("prelude-overlay");
-        const openBtn = document.getElementById("prelude-open-btn");
-        const preludeSeenKey = "bk_prelude_seen";
-
-        if (!body || !overlay) {
-          return;
-        }
-
-        let hasSeenPrelude = false;
-        try {
-          hasSeenPrelude = localStorage.getItem(preludeSeenKey) === "true";
-        } catch (error) {
-          hasSeenPrelude = false;
-        }
-        window.hasSeenPrelude = hasSeenPrelude;
-        hasSeenPrelude = false;
-
-        if (hasSeenPrelude) {
-          overlay.remove();
-          body.classList.remove("prelude-locked");
-          function tryPlayHero() {
-            var v = document.getElementById("hero-video");
-            if (v && typeof v.play === "function") v.play().catch(function () {});
-          }
-          if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", tryPlayHero);
-          } else {
-            setTimeout(tryPlayHero, 0);
-          }
-          return;
-        }
-
-        if (!openBtn) {
-          return;
-        }
-
-        let started = false;
-
-        function playHeroVideo() {
-          const heroVideo = document.getElementById("hero-video");
-          if (heroVideo && typeof heroVideo.play === "function") {
-            heroVideo.play().catch(function () {});
-          }
-        }
-
-        function startPrelude() {
-          if (started) return;
-          started = true;
-          window.hasSeenPrelude = true;
-          playHeroVideo();
-          try {
-            localStorage.setItem(preludeSeenKey, "true");
-          } catch (error) {
-            // no-op: continue animation even if storage is unavailable
-          }
-          body.classList.add("prelude-open");
-          window.setTimeout(function () {
-            body.classList.add("prelude-dropping");
-          }, 1300);
-          window.setTimeout(function () {
-            body.classList.add("prelude-expanding");
-          }, 2800);
-          window.setTimeout(function () {
-            body.classList.add("prelude-fadeout");
-          }, 3800);
-          window.setTimeout(function () {
-            overlay.remove();
-            body.classList.remove("prelude-locked", "prelude-open", "prelude-dropping", "prelude-expanding", "prelude-fadeout");
-            playHeroVideo();
-          }, 4400);
-        }
-
-        openBtn.addEventListener("click", startPrelude);
-        openBtn.addEventListener("keydown", function (event) {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            startPrelude();
-          }
-        });
-      })();
-    </script>
-    <script>
-      (function () {
         var hero = document.getElementById("hero-section");
         var header = document.getElementById("main-header");
         if (!hero || !header) return;
@@ -1113,6 +1038,44 @@ On 05 January 2025, beneath the golden wash of a Mauritian sunset, their story t
           { threshold: 0, rootMargin: "0px 0px 0px 0px" }
         );
         observer.observe(hero);
+      })();
+    </script>
+    <script>
+      (function () {
+        var lightbox = document.getElementById("image-lightbox");
+        var lightboxImg = document.getElementById("image-lightbox-img");
+        var lightboxClose = document.getElementById("image-lightbox-close");
+        if (!lightbox || !lightboxImg) return;
+        window.openImageLightbox = function (src) {
+          lightboxImg.src = src;
+          lightbox.classList.remove("hidden");
+          lightbox.classList.add("flex");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        };
+        window.closeImageLightbox = function () {
+          lightbox.classList.add("hidden");
+          lightbox.classList.remove("flex");
+          lightbox.setAttribute("aria-hidden", "true");
+          lightboxImg.src = "";
+          document.body.style.overflow = "";
+        };
+        lightbox.addEventListener("click", function (e) {
+          if (e.target === lightbox || (e.target.closest && e.target.closest("#image-lightbox-close"))) window.closeImageLightbox();
+        });
+        if (lightboxClose) lightboxClose.addEventListener("click", window.closeImageLightbox);
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") window.closeImageLightbox();
+        });
+        var triggers = document.querySelectorAll(".home-lightbox-trigger");
+        for (var i = 0; i < triggers.length; i++) {
+          (function (el) {
+            el.addEventListener("click", function () {
+              var src = el.getAttribute("data-lightbox-src") || (el.src && el.tagName === "IMG" ? el.src : null);
+              if (src && window.openImageLightbox) window.openImageLightbox(src);
+            });
+          })(triggers[i]);
+        }
       })();
     </script>
   </body>

@@ -1,0 +1,5 @@
+# Do not commit real database credentials
+config.php
+
+# Optional: rate-limit data (writable by server)
+rate_limit/
