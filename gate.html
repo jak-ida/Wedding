@@ -199,7 +199,19 @@
         background-size: cover;
         transition: left 900ms cubic-bezier(0.22,0.7,0.2,1), right 900ms cubic-bezier(0.22,0.7,0.2,1), top 900ms cubic-bezier(0.22,0.7,0.2,1), bottom 900ms cubic-bezier(0.22,0.7,0.2,1), transform 900ms cubic-bezier(0.22,0.7,0.2,1), width 900ms cubic-bezier(0.22,0.7,0.2,1), height 900ms cubic-bezier(0.22,0.7,0.2,1), border-radius 900ms ease, box-shadow 900ms ease;
       }
+      /* Desktop: do not expand card to full viewport; keep card in envelope, modal appears on top */
+      @media (min-width: 1024px) {
+        body.prelude-expanding .prelude-preview {
+          left: 10%; right: 10%; bottom: 5%; top: auto; height: 72%; width: auto; margin-left: 0; margin-top: 0;
+          border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+          transform: translateY(-100px) scale(1);
+          transition: none;
+        }
+      }
       body.prelude-expanding .prelude-envelope { width: 100vw; height: 100vh; border-radius: 0; }
+      @media (min-width: 1024px) {
+        body.prelude-expanding .prelude-envelope { width: 80vw; height: 75vh; border-radius: 0; }
+      }
       body.prelude-expanding .prelude-envelope-drop-back,
       body.prelude-expanding .prelude-envelope-drop-front,
       body.prelude-expanding .prelude-envelope-drop-flap { pointer-events: none; visibility: hidden; }
