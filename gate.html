@@ -125,13 +125,15 @@
           margin-left: 0; margin-top: 0;
           width: auto; height: min(72vh, calc(90vw * 2108 / 1038));
           aspect-ratio: 1038 / 2108;
-          transform: translate(-50%, -50%) scale(0.95);
+          transform: translate(-50%, -50%) scale(1);
           background-image: url("Assets/hero_section_mobile.jpg");
           background-size: contain;
           background-position: center;
+          transition: opacity 500ms ease 400ms;
         }
         body.prelude-open .prelude-preview {
-          transform: translate(-50%, calc(-50% - 50px)) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+          transition: opacity 500ms ease 300ms;
         }
       }
       @media (min-width: 451px) and (max-width: 1023px) {
@@ -141,13 +143,15 @@
           width: min(90vw, calc(72vh * 722 / 645));
           height: auto;
           aspect-ratio: 722 / 645;
-          transform: translate(-50%, -50%) scale(0.95);
+          transform: translate(-50%, -50%) scale(1);
           background-image: url("Assets/hero_section_tablet.png");
           background-size: contain;
           background-position: center;
+          transition: opacity 500ms ease 400ms;
         }
         body.prelude-open .prelude-preview {
-          transform: translate(-50%, calc(-50% - 50px)) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+          transition: opacity 500ms ease 300ms;
         }
       }
       @media (min-width: 1024px) {
@@ -208,6 +212,37 @@
           border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.2);
           transform: translateY(-100px) scale(1);
           transition: none;
+        }
+      }
+      /* Mobile & tablet: same as desktop – do not expand card; keep in place, then fade into form */
+      @media (max-width: 450px) {
+        body.prelude-expanding .prelude-preview {
+          left: 50%; top: 50%;
+          margin-left: 0; margin-top: 0;
+          width: auto;
+          height: min(72vh, calc(90vw * 2108 / 1038));
+          aspect-ratio: 1038 / 2108;
+          transform: translate(-50%, -50%) scale(1);
+          transition: none;
+          border-radius: 8px;
+          box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+          background-size: contain;
+          background-position: center;
+        }
+      }
+      @media (min-width: 451px) and (max-width: 1023px) {
+        body.prelude-expanding .prelude-preview {
+          left: 50%; top: 50%;
+          margin-left: 0; margin-top: 0;
+          width: min(90vw, calc(72vh * 722 / 645));
+          height: auto;
+          aspect-ratio: 722 / 645;
+          transform: translate(-50%, -50%) scale(1);
+          transition: none;
+          border-radius: 8px;
+          box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+          background-size: contain;
+          background-position: center;
         }
       }
       body.prelude-expanding .prelude-envelope { width: 100vw; height: 100vh; border-radius: 0; }
